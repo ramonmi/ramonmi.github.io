@@ -8,10 +8,10 @@ Welcome to Mi Repo's documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Demo
+   :caption: Example
    
-   Manual/part1/test
-   Manual/data
+   Manual/Markdown/demo
+   Manual/RST/data
 
 
 Indices and tables
