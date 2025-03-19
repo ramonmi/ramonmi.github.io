@@ -1,0 +1,21 @@
+/* Change the default width of primary sidebar */
+.bd-sidebar-primary { 
+    width: 15%;
+}
+
+/* Change the default width of secondary sidebar */
+.bd-sidebar-secondary {
+    width: 15%;
+} 
+
+/* Maximum the main content */
+.bd-main .bd-content .bd-article-container {
+    max-width: 100%;
+    /* default is 60em */
+}
+
+/* Set full page width  */
+.bd-page-width {
+    max-width: 100%;
+    /* default is 88rem */
+}
