@@ -1,0 +1,9 @@
+# code
+.vscode
+
+# ignore build
+build
+
+# npm modules
+node_modules
+package-lock.json

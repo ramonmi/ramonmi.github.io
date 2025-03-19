@@ -1,0 +1,15 @@
+ <!-- layout.html
+ * Place this file in root/source/_templates
+ * -->
+{% extends "!layout.html" %}
+{% block extrahead %}
+    {{super}}
+    <link href="{{ pathto("_static/css/my_theme.css", True) }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block extrafooter %}
+    {{super}}
+    <div class="footer">
+        My custom footer just needs to add a single sentance to the existing footer.
+    </div>
+{% endblock %}

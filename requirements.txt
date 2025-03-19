@@ -1,0 +1,9 @@
+sphinx==7.4.7
+furo==2024.8.6
+myst-parser==3.0.1
+sphinx-markdown-tables==0.0.17
+sphinxcontrib.mermaid==1.0.0
+sphinx_copybutton==0.5.2
+jieba==0.42.1
+sphinx-tabs==3.4.7
+sphinx_togglebutton==0.3.2
