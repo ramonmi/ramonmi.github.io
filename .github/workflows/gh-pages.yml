@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --all-extras --dev
 
-      - run: zensical build --clean
+      - run: uv run zensical build --clean
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
