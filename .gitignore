@@ -1,8 +1,8 @@
-# code
 .vscode
+.venv
 
-# ignore build
-docs/sphinx/build
+# ignore site
+site
 
 # npm modules
 node_modules
