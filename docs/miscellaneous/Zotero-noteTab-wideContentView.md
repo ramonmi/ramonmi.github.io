@@ -23,3 +23,5 @@
 ```
 
 ![20260604_203456_screenshots](https://pub-5ab96ca635214cd7a827a11ffc31194a.r2.dev/BlogImg/20260604_203456_screenshots)
+
+[See Also (**Github** Gist) :lucide-external-link:](https://gist.github.com/ramonmi/cd02874bdd7aade1522068ba8178cf11){ .md-button }
