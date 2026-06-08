@@ -317,4 +317,5 @@ patch:
 - [@Kito0615](https://github.com/Kito0615)：[如何在Rime-Squirrel中简单实现输入统计功能。](https://gist.github.com/Kito0615/b6ed63d9de37ddfa84a4bf8fa3372706)
 - GPT-5.2-Codex
 
-[See Also (**Github** Gist) :lucide-external-link:](https://gist.github.com/ramonmi/b1ac25bbe017c375b17fe23f0158d878){ .md-button }
+## See Also
+[ Rime-input-count.md | **Github** Gist :lucide-external-link:](https://gist.github.com/ramonmi/b1ac25bbe017c375b17fe23f0158d878){ .md-button }
