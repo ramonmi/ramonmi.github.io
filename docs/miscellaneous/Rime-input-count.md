@@ -267,7 +267,7 @@
     return M
     ```
 
-1. 下载[input_count.lua](https://pub-5ab96ca635214cd7a827a11ffc31194a.r2.dev/BlogImg/1780899841230_input_count.lua)文件，并放在Rime用户文件夹的`lua/`文件夹内。
+1. 下载[input_count.lua](https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/02/input_count.lua)文件，并放在Rime用户文件夹的`lua/`文件夹内。
 2. 使用前需**自定义**`lua`脚本中**储存数据的文件路径**，根据自己的系统版本而定，采用绝对路径。
 3. 可选自定义`lua`脚本中显示统计数据的按键，默认值：`sS`。
 
@@ -309,9 +309,9 @@ patch:
 - 在*自定义绝对路径*下的`input_count.txt`文件中记录起始时间、总计输入数据、每天的输入数据。
 - 在按下`sS`或*自定义非常用按键*时，输入统计数据在候选框显示。
 
-![](https://pub-5ab96ca635214cd7a827a11ffc31194a.r2.dev/BlogImg/20260207_input_count_demo){ width="600" }
+![](https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/02/20260207_input_count_demo){ width="600" }
 
-![](https://pub-5ab96ca635214cd7a827a11ffc31194a.r2.dev/BlogImg/20260207_input_count_screenshot){ width="600" }
+![](https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/02/20260207_input_count_screenshot){ width="600" }
 
 ## 致谢
 - [@Kito0615](https://github.com/Kito0615)：[如何在Rime-Squirrel中简单实现输入统计功能。](https://gist.github.com/Kito0615/b6ed63d9de37ddfa84a4bf8fa3372706)

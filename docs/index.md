@@ -1,5 +1,5 @@
 ---
-title: Ramon's Notes
+title:
 ---
 
 # Get started
