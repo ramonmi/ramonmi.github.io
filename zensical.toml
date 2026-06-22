@@ -38,6 +38,7 @@ nav = [
     "miscellaneous/index-miscellaneous.md",
     { "Zotero笔记标签页css设置" = "miscellaneous/Zotero-noteTab-wideContentView.md" },
     { "Rime输入统计" = "miscellaneous/Rime-input-count.md" },
+    { "Rime保存英文自造词" = "miscellaneous/Rime-ice-en-words.md" },
   ]},
   { "About" = "about-me.md" },
 ]

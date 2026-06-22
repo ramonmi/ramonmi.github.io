@@ -272,38 +272,38 @@
 3. 可选自定义`lua`脚本中显示统计数据的按键，默认值：`sS`。
 
 ## 配置说明
-- 在Rime用户文件夹，对使用的主方案（以下以[雾凇方案](https://github.com/iDvel/rime-ice)为例）进行patch，patch的使用方法参见：[以 patch 的方式打补丁](https://dvel.me/posts/rime-ice/#%e4%bb%a5-patch-%e7%9a%84%e6%96%b9%e5%bc%8f%e6%89%93%e8%a1%a5%e4%b8%81)
-- 新建或打开已有的`rime_ice.custom.yaml`，增加以下内容，**注意使用空格缩进，不能使用`Tab`缩进！**
+1. 在Rime用户文件夹，对使用的主方案（以下以[雾凇方案](https://github.com/iDvel/rime-ice)为例）进行patch，patch的使用方法参见：[以 patch 的方式打补丁](https://dvel.me/posts/rime-ice/#%e4%bb%a5-patch-%e7%9a%84%e6%96%b9%e5%bc%8f%e6%89%93%e8%a1%a5%e4%b8%81)
+2. 新建或打开已有的`rime_ice.custom.yaml`，增加以下内容，**注意使用空格缩进，不能使用`Tab`缩进！**
 
-```diff linenums="1" title="rime_ice.custom.yaml新增行"
-patch:
-  engine/translators:
-    ...   # 原有的translators复制过来
-+   - lua_translator@*input_count   # 输入统计
-```
-???+ info "点击展开`rime_ice.custom.yaml`完整配置示例"
-
-    ```yaml linenums="1" hl_lines="17" title="rime_ice.custom.yaml完整配置"
+    ```diff linenums="1" title="rime_ice.custom.yaml新增行"
     patch:
-    # lua translator 添加
-    engine/translators:
-      - punct_translator
-      - script_translator
-      - lua_translator@*date_translator    # 时间、日期、星期
-      - lua_translator@*lunar              # 农历
-      - lua_translator@*uuid               # UUID
-      - table_translator@custom_phrase     # 自定义短语 custom_phrase.txt
-      - table_translator@melt_eng          # 英文输入
-      - table_translator@cn_en             # 中英混合词汇
-      - table_translator@radical_lookup    # 部件拆字反查
-      - lua_translator@*unicode            # Unicode
-      - lua_translator@*number_translator  # 数字、金额大写
-      - lua_translator@*calc_translator    # 计算器
-      - lua_translator@*force_gc           # 暴力 GC
-      - lua_translator@*input_count        # 输入统计
+      engine/translators:
+        ...   # 原有的translators复制过来
+    +   - lua_translator@*input_count   # 输入统计
     ```
+    ???+ info "点击展开`rime_ice.custom.yaml`完整配置示例"
 
-- 重新部署Rime输入法，即可启用**输入统计**。启用后首次输入会记录下数据统计起始时间。
+        ```yaml linenums="1" hl_lines="17" title="rime_ice.custom.yaml完整配置"
+        patch:
+        # lua translator 添加
+        engine/translators:
+          - punct_translator
+          - script_translator
+          - lua_translator@*date_translator    # 时间、日期、星期
+          - lua_translator@*lunar              # 农历
+          - lua_translator@*uuid               # UUID
+          - table_translator@custom_phrase     # 自定义短语 custom_phrase.txt
+          - table_translator@melt_eng          # 英文输入
+          - table_translator@cn_en             # 中英混合词汇
+          - table_translator@radical_lookup    # 部件拆字反查
+          - lua_translator@*unicode            # Unicode
+          - lua_translator@*number_translator  # 数字、金额大写
+          - lua_translator@*calc_translator    # 计算器
+          - lua_translator@*force_gc           # 暴力 GC
+          - lua_translator@*input_count        # 输入统计
+        ```
+
+3. 重新部署Rime输入法，即可启用**输入统计**。启用后首次输入会记录下数据统计起始时间。
 
 ## 效果示意
 - 在*自定义绝对路径*下的`input_count.txt`文件中记录起始时间、总计输入数据、每天的输入数据。
