@@ -34,6 +34,7 @@
 - AGENTS.md 给出 agent-lab 与 Zensical 两套完整模板、根/子目录规则和验证方法；不覆盖真实项目规则，不假定八款工具加载规则相同。
 - CC Switch 按受支持客户端编写安装、配置切换、验证及备份恢复；Herdr 先讲终端布局，再讲状态和协作，所有控制示例以受管理环境与真实 ID 为前提。
 - 根据当前官方资料确认项目身份、版本、安装包、平台支持、配置、命令和认证方式。
+- P21 通用介绍并比较 prompts、Skills、MCP、RAG、memory、plugins 和 hooks 的职责、适用时机、边界与组合方式；Zotero 只用 `54yyyu/zotero-mcp` 展示 MCP server 和 `zotero-cli` Skill 两种接入路线。不要用 Zotero 项目替代通用解释，也不要把该项目的功能推及所有工具；核验当前官方资料与权限边界。
 - Codex 使用官方 OpenAI 文档及当前可用的 OpenAI Docs 技能；其他工具使用各自官方来源。
 - Pi、OpenCode、Kimi 的项目或版本迁移重新核验；DSH 采用官方当前界面，不虚构终端聊天模式；Hermes 的待核验能力查证后再写。
 - 不支持或未确认的能力明确说明，不把另一个工具的功能、命令或权限机制移植过来。

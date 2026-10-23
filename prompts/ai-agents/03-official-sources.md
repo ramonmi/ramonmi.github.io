@@ -93,6 +93,8 @@ MCP 练习优先选官方文件系统参考服务器，限制为独立练习目�
 | S23 | [nvm-sh 官方仓库](https://github.com/nvm-sh/nvm) | README 请求超时；需核验 macOS/Linux/WSL 的安装和 shell 初始化、适用 Node 版本与更新说明 |
 | S24 | [uv 安装](https://docs.astral.sh/uv/getting-started/installation/)、[Python 版本](https://docs.astral.sh/uv/concepts/python-versions/)、[项目指南](https://docs.astral.sh/uv/guides/projects/)、[工具指南](https://docs.astral.sh/uv/guides/tools/) | 已读取项目指南，确认项目、.venv、依赖、锁文件和运行的组织；安装、Python 管理和工具命令逐页待核验 |
 | S25 | [Anaconda 安装入口](https://www.anaconda.com/docs/getting-started/installation)、[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)、[Conda 包管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-pkgs.html) | 已读取安装索引及 Conda 环境管理资料；各平台 Anaconda3 安装、shell 初始化和包管理细节待进一步核验 |
+| S27 | [54yyyu/zotero-mcp 仓库](https://github.com/54yyyu/zotero-mcp)、[Getting Started](https://github.com/54yyyu/zotero-mcp/blob/main/docs/getting-started.md)、[CLI 与 agent skill](https://github.com/54yyyu/zotero-mcp/blob/main/docs/cli.md)、[Agent 指南](https://github.com/54yyyu/zotero-mcp/blob/main/docs/for-agents.md) | 2026-10-23 核验 MCP server、`zotero-cli` CLI/agent skill 两种接入方式。此来源仅支撑 Zotero 案例，不作为 RAG、memory、plugins 或 hooks 的通用概念依据；未安装、未连接 Zotero |
+| S28 | [MCP 入门](https://modelcontextprotocol.io/docs/getting-started/intro)、[Agent Skills 规范](https://agentskills.io/specification)、[RAG 概述](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview)、[Claude Code memory](https://code.claude.com/docs/en/memory)、[Claude Code hooks](https://code.claude.com/docs/en/hooks)、[Claude Code plugins](https://code.claude.com/docs/en/plugins)、[OpenCode plugins](https://opencode.ai/docs/plugins/)、[Codex plugins](https://developers.openai.com/codex/plugins/) | 2026-10-23 已读取 MCP、Agent Skills、RAG、memory、hooks、plugins 的通用资料与产品实现示例；正文应区分通用概念和客户端特定行为，八款工具支持矩阵仍需逐项依其当前官方文档核验 |
 
 > S07 首轮仓库读取曾超时/限流；该状态已由 2026-10-22 后续官方文档复核补充，现以补记为准。S19、S20 等初次读取记录保留为历史，不代表后续没有新增阅读。
 
@@ -193,3 +195,7 @@ Windows 原生 / Git Bash / WSL / macOS / Ubuntu 支持证据：
 配图原始来源目录：`docs/assets/ai-agents/protocols-temp/`。三张官方 PNG 均已审阅；正文采用表单和接管两张，二者已上传并验证。备用图 `01-codex-providers-require-routing.png` 已由用户从本地和图床删除。图片原始地址、大小、SHA-256、引用页面、图床状态和本地留存情况见 [图片清单](protocol-images.json)。
 
 正文引用的两张图片通过公开访问检查，Markdown 使用对应图床地址；三张图的本地副本均已删除。备用图不再有可用图床地址，也未嵌入正文。
+
+## S27：P21 扩展概念与 Zotero MCP 示例
+
+核验日期：2026-10-23。读取 [项目 README](https://github.com/54yyyu/zotero-mcp)、[Getting Started](https://github.com/54yyyu/zotero-mcp/blob/main/docs/getting-started.md)、[CLI 与 agent skill](https://github.com/54yyyu/zotero-mcp/blob/main/docs/cli.md) 和 [Agent 指南](https://github.com/54yyyu/zotero-mcp/blob/main/docs/for-agents.md)。该项目作为 MCP server 与 `zotero-cli`/Skill 两种接入路线的案例；本节其他概念必须依据通用协议资料和各 Harness 官方文档解释。写作前重新核对最新包名、命令、权限与客户端支持。未安装、未启动服务或访问 Zotero library。
