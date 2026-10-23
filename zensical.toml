@@ -34,6 +34,44 @@ edit_uri = "edit/main/docs"
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
   { "Home" = "index.md" },
+  { "AI Agents" = [
+    "ai-agents/index.md",
+    { "入门与环境" = [
+      "ai-agents/getting-started/concepts.md",
+      "ai-agents/getting-started/windows.md",
+      "ai-agents/getting-started/wsl.md",
+      "ai-agents/getting-started/macos-linux.md",
+      "ai-agents/getting-started/python-environments.md",
+      "ai-agents/getting-started/first-task.md",
+    ]},
+    { "Harness" = [
+      "ai-agents/harnesses/codex.md",
+      "ai-agents/harnesses/claude-code.md",
+      "ai-agents/harnesses/opencode.md",
+      "ai-agents/harnesses/pi.md",
+      "ai-agents/harnesses/oh-my-pi.md",
+      "ai-agents/harnesses/dsh.md",
+      "ai-agents/harnesses/hermes.md",
+      "ai-agents/harnesses/kimi-code.md",
+    ]},
+    { "配套工具" = [
+      "ai-agents/tools/cc-switch.md",
+      "ai-agents/tools/api-protocols.md",
+      "ai-agents/tools/herdr.md",
+    ]},
+    { "工作流与协作" = [
+      "ai-agents/workflows/daily-development.md",
+      "ai-agents/workflows/project-instructions.md",
+      "ai-agents/workflows/extensions.md",
+      "ai-agents/workflows/selection-and-migration.md",
+      "ai-agents/workflows/automation.md",
+    ]},
+    { "参考" = [
+      "ai-agents/reference/troubleshooting.md",
+      "ai-agents/reference/glossary-and-cheatsheet.md",
+      "ai-agents/reference/maintenance.md",
+    ]},
+  ]},
   { "Miscellaneous" = [
     "miscellaneous/index-miscellaneous.md",
     { "Zotero笔记标签页css设置" = "miscellaneous/Zotero-noteTab-wideContentView.md" },

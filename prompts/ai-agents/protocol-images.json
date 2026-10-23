@@ -1,0 +1,60 @@
+{
+  "page": "docs/ai-agents/tools/api-protocols.md",
+  "downloaded_at": "2026-10-22",
+  "status": "active-references-verified",
+  "local_storage": {
+    "directory": "docs/assets/ai-agents/protocols-temp/",
+    "retained_files": [],
+    "removed_after_upload": ["02-deepseek-codex-routing-form.png", "03-local-route-codex-takeover.png"],
+    "removed_by_user": ["01-codex-providers-require-routing.png"]
+  },
+  "source_guide": "https://github.com/farion1231/cc-switch-website/blob/main/public/docs/tutorials/zh/codex-deepseek-routing-guide.md",
+  "upload_policy": "仅记录上传脚本返回并经公开访问检查的 URL；不保存上传密钥。",
+  "images": [
+    {
+      "file": "01-codex-providers-require-routing.png",
+      "bytes": 88935,
+      "sha256": "2ac13082c3a865c17b214c8ffc2e9ae2bf91bf8f8354199c1f4ab2e0656b2867",
+      "usage": "备用：官方旧版供应商列表，未嵌入正文",
+      "embedded": false,
+      "local_path": null,
+      "local_status": "deleted-by-user",
+      "local_status": "deleted-by-user",
+      "source_url": "https://raw.githubusercontent.com/farion1231/cc-switch-website/main/public/docs/assets/codex-deepseek-routing/01-codex-providers-require-routing.png",
+      "markdown_reference": null,
+      "uploaded_url": null,
+      "former_uploaded_url": "https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/10/01-codex-providers-require-routing.png",
+      "remote_status": "deleted-by-user",
+      "visually_reviewed": true,
+      "caption_note": "官方旧版路由教程截图；不可据此推断当前 DeepSeek 原生 Responses 必须路由。"
+    },
+    {
+      "file": "02-deepseek-codex-routing-form.png",
+      "bytes": 163093,
+      "sha256": "5787d4a6bd26a3a187e2f697843d72fb35ea79481a610ab5fa7cbf96b689fb2f",
+      "usage": "图 1：旧版 DeepSeek Codex 表单与路由映射位置示意",
+      "embedded": true,
+      "local_path": null,
+      "local_status": "deleted-after-upload",
+      "source_url": "https://raw.githubusercontent.com/farion1231/cc-switch-website/main/public/docs/assets/codex-deepseek-routing/02-deepseek-codex-routing-form.png",
+      "markdown_reference": "https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/10/02-deepseek-codex-routing-form.png",
+      "uploaded_url": "https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/10/02-deepseek-codex-routing-form.png",
+      "visually_reviewed": true,
+      "caption_note": "官方旧版路由教程截图；不可据此推断当前 DeepSeek 原生 Responses 必须路由。"
+    },
+    {
+      "file": "03-local-route-codex-takeover.png",
+      "bytes": 118835,
+      "sha256": "9b6533c40c0b788972c569a4c4a541a442139306beca5d441164312e950f8149",
+      "usage": "图 2：路由服务、Codex 接管与上游供应商状态",
+      "embedded": true,
+      "local_path": null,
+      "local_status": "deleted-after-upload",
+      "source_url": "https://raw.githubusercontent.com/farion1231/cc-switch-website/main/public/docs/assets/codex-deepseek-routing/03-local-route-codex-takeover.png",
+      "markdown_reference": "https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/10/03-local-route-codex-takeover.png",
+      "uploaded_url": "https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/10/03-local-route-codex-takeover.png",
+      "visually_reviewed": true,
+      "caption_note": "官方旧版路由教程截图；不可据此推断当前 DeepSeek 原生 Responses 必须路由。"
+    }
+  ]
+}
