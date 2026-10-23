@@ -76,6 +76,71 @@ CI 流程（`.github/workflows/gh-pages.yml`）：
 - 不在 `site/`、`.venv/`、`.cache/` 中提交内容（均已 gitignore）
 - 不直接修改 `uv.lock`，依赖变更通过 `uv` 管理
 
+## 图片上传与引用
+
+使用 Git Bash 调用 `scripts/image-upload.local.sh`，依赖 curl >= 7.87.0 和 jq。仅上传任务指定的图片，所有路径参数加双引号。
+
+### 配置与存储规则
+
+| 环境变量 | 用途 |
+| --- | --- |
+| `IMGBED_BASE_URL` | 必填，设为 `https://cloudflare-imgbed-81c.pages.dev` |
+| `IMGBED_API_TOKEN` | 必填，由用户会话或运行环境注入；上传需 `upload` 权限，找回链接还需 `list` 权限 |
+| `IMGBED_CHANNEL_NAME` | 可选，后台的具体通道名称；只有实际名称为 `Cloudflare R2` 时才设为该值 |
+| `IMGBED_LIST_FOLDER` | 可选，仅覆盖查询目录，例如 `BlogImg/2026/09`；默认查询当月 |
+| `IMGBED_REFERER` | 可选，图片检查时的来源页；默认博客根地址，用于防盗链检查 |
+
+- Token 通过环境变量传入，不写入源码、文章、日志或 Git；不启用 `set -x` 或 `curl -v` 输出凭据。
+- 固定 R2 通道（`uploadChannel=cfr2`），保持 `autoRetry=false`，避免失败后切换其他通道。
+- 按 `Asia/Shanghai` 时区自动归档到 `/BlogImg/YYYY/MM`，例如 `/BlogImg/2026/10`；API 发送不带开头 `/` 的相对目录。
+- 使用 `uploadNameType=origin` 保留源文件名；同月同名图片上传前确认是否重复，不添加随机前缀。
+
+### 上传、验证与写入文章
+
+在仓库根目录执行，Token 应已配置并导出；将示例路径与图片说明换成任务中的实际值：
+
+```bash
+export IMGBED_BASE_URL="https://cloudflare-imgbed-81c.pages.dev"
+: "${IMGBED_API_TOKEN:?请先设置图床 API Token}"
+export IMGBED_API_TOKEN
+
+if image_url="$(bash "scripts/image-upload.local.sh" upload "docs/assets/example.png")"; then
+    if bash "scripts/image-upload.local.sh" check "$image_url"; then
+        bash "scripts/image-upload.local.sh" markdown "$image_url" "图片内容说明" 900
+    fi
+fi
+```
+
+`upload` 成功时仅输出一个 URL；脚本优先读取 `publicUrl`，否则使用 `src` 并按需补全图床域名。`check` 不携带上传 Token，验证 HTTP 成功状态及 `image/*` 类型。验证通过后，用 `apply_patch` 将 `markdown` 输出写入目标 `docs/` 文章，并预览图片与点击放大效果；不要自行猜测 URL。
+
+图片引用示例（替换为上传返回的实际链接）：
+
+```markdown
+![图片内容说明](https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/10/example.png){ loading=lazy width="900" }
+```
+
+需要居中图注时使用 `<figure markdown="span">` 与 `<figcaption>`；当前未启用 `pymdownx.blocks.caption`，不直接使用 `/// caption`。
+
+### 找回链接与失败处理
+
+```bash
+bash "scripts/image-upload.local.sh" list "源文件名" 0 20
+IMGBED_LIST_FOLDER="BlogImg/2026/09" \
+    bash "scripts/image-upload.local.sh" list "源文件名" 0 20
+bash "scripts/image-upload.local.sh" --help
+```
+
+`list` 每行返回一个候选链接，多个结果需核对图片后选择；通过 `start`、`count` 分页，空结果不等于上传失败。超时或响应异常时，先查询是否已写入，避免直接重传。403 检查 Token 权限或防盗链，公开链接返回 HTML 时检查访问策略。脚本不实现分片上传。
+
+API 与图片语法参考：
+
+```text
+https://cfbed.sanyue.de/en/api/upload.html
+https://cfbed.sanyue.de/en/api/file.html
+https://cfbed.sanyue.de/en/api/list.html
+https://zensical.org/docs/authoring/images/
+```
+
 ## Markdown 语法规范（Zensical）
 
 > 来源：https://zensical.org/docs/authoring/markdown/ 及 Authoring 系列页面（admonitions、code-blocks、lists、footnotes、icons-emojis、diagrams、images、formatting、math、content-tabs、tooltips、buttons、grids、data-tables、frontmatter 等）
