@@ -76,6 +76,27 @@ CI 流程（`.github/workflows/gh-pages.yml`）：
 - 不在 `site/`、`.venv/`、`.cache/` 中提交内容（均已 gitignore）
 - 不直接修改 `uv.lock`，依赖变更通过 `uv` 管理
 
+## Zensical 依赖更新
+
+更新 Zensical 时，根据是否需要调整 `pyproject.toml` 中的版本约束选择命令。不要手动编辑 `uv.lock`。
+
+- 只升级锁文件中的 Zensical 版本，保留 `pyproject.toml` 当前约束：
+  ```bash
+  uv lock --upgrade-package zensical
+  uv sync
+  ```
+- 需要调整最低版本约束时，用 `uv add` 更新项目依赖。例如：
+  ```bash
+  uv add "zensical>=0.0.50"
+  ```
+  将示例版本替换为目标最低版本；`uv add` 会更新 `pyproject.toml`、`uv.lock` 和项目环境。
+- 需要放宽现有锁定并解析最新兼容版本，同时更新项目约束时：
+  ```bash
+  uv add --upgrade zensical
+  ```
+  `--upgrade` 可简写为 `-U`。该命令会更新 `pyproject.toml` 和 `uv.lock`，并同步项目环境。
+- 更新后查看 `git diff -- pyproject.toml uv.lock`，再运行 `uv run zensical build --clean` 验证站点构建。
+
 ## 图片上传与引用
 
 使用 Git Bash 调用 `scripts/image-upload.local.sh`，依赖 curl >= 7.87.0 和 jq。仅上传任务指定的图片，所有路径参数加双引号。
