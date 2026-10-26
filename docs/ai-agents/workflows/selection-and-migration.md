@@ -9,7 +9,7 @@ description: 按平台、服务、工作习惯和扩展需求选择 Harness，�
 
 ## 先按约束筛选
 
-先确认平台与 shell、模型服务/账号、是否接受 API 按量费用、是否需离线或自托管、扩展和团队规则要求。工具列表见 [Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Hermes](../harnesses/hermes.md)、[Kimi Code](../harnesses/kimi-code.md)。
+先确认平台与 shell、模型服务/账号、是否接受 API 按量费用、是否需离线或自托管、扩展和团队规则要求。工具列表见 [Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Hermes](../harnesses/hermes.md)、[Kimi Code](../harnesses/kimi-code.md)和[WorkBuddy](../harnesses/workbuddy.md)。
 
 ## 对照维度
 
@@ -40,4 +40,4 @@ description: 按平台、服务、工作习惯和扩展需求选择 Harness，�
 最终选择与理由：
 ```
 
-任何工具均可作为候选；无须同时安装八款。需要共用提供商配置再看[CC Switch](../tools/cc-switch.md)，并先确认实际支持矩阵。
+任何工具均可作为候选；无须同时安装九款。需要共用提供商配置再看[CC Switch](../tools/cc-switch.md)，并先确认实际支持矩阵。

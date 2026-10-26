@@ -99,7 +99,7 @@ Bash 临时环境变量使用 `NAME=value command` 或 `export NAME=value`。Pow
 
 ## 按需准备运行时
 
-独立发行的工具可能不需要 Node 或 Python。只按所选 Harness 和插件的官方要求安装运行时。Node CLI 使用上述 nvm-windows；Python 项目环境见 [uv 与 Anaconda3](python-environments.md)。不需要为八款工具一次装齐所有语言环境。
+独立发行的工具可能不需要 Node 或 Python。只按所选 Harness 和插件的官方要求安装运行时。Node CLI 使用上述 nvm-windows；Python 项目环境见 [uv 与 Anaconda3](python-environments.md)。不需要为九款工具一次装齐所有语言环境。
 
 ## Shell profile 和脚本安全
 

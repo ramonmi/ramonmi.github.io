@@ -1,11 +1,11 @@
 ---
 title: AI Agents
-description: 面向 Windows 优先用户的终端 AI Agent 安装、使用、配置与协作教程。
+description: 面向 Windows 优先用户的 AI Agent 与 Harness 安装、使用、配置与协作教程。
 ---
 
 # AI Agents
 
-从终端环境准备到真实项目工作流，逐步学习 Codex、Claude Code、OpenCode、Pi、oh-my-pi、DSH、Hermes 与 Kimi Code。Windows 以 Git Bash 为主并介绍 PowerShell 7，兼顾 WSL、macOS 与 Linux。
+从环境准备到真实项目工作流，逐步学习 Codex、Claude Code、OpenCode、Pi、oh-my-pi、DSH、Hermes、Kimi Code 与 WorkBuddy。Windows 以 Git Bash 为主并介绍 PowerShell 7，兼顾 WSL、macOS 与 Linux。
 
 ## 这套教程能帮助你做什么
 
@@ -28,6 +28,7 @@ description: 面向 Windows 优先用户的终端 AI Agent 安装、使用、配
 - [DSH（DeepSeek Harness）](harnesses/dsh.md)
 - [Hermes Agent](harnesses/hermes.md)
 - [Kimi Code CLI](harnesses/kimi-code.md)
+- [WorkBuddy](harnesses/workbuddy.md)
 
 不确定怎么选？先完成[概念入门](getting-started/concepts.md)，再看[工具选择与迁移](workflows/selection-and-migration.md)。
 

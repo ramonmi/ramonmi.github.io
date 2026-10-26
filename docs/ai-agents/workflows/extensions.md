@@ -35,7 +35,7 @@ description: 比较 prompts、Skills、MCP、RAG、memory、plugins 与 hooks，
 
 不要只因为名称相似就互换机制：RAG 解决“从资料中找哪些内容作为回答依据”，memory 解决“哪些信息需要留到之后”；MCP 解决系统连接，Skill 解决可复用的操作说明；plugin 的范围由客户端决定，hook 则围绕事件自动运行。
 
-## 八款工具的支持入口
+## 九款工具的支持入口
 
 下表列官方能力说明入口，供写作和配置时核对。它不是兼容性承诺：同名能力的格式、作用范围和版本要求可能不同；“扩展”也不意味着一定采用名为 plugin 的系统。请在安装前打开对应工具当前文档，并以页面标明的核验日期判断。
 
@@ -49,6 +49,7 @@ description: 比较 prompts、Skills、MCP、RAG、memory、plugins 与 hooks，
 | DSH | [官方仓库](https://github.com/deepseek-ai/deepseek-harness) · [文档站](https://deepseek-harness.github.io/deepseek-harness/) | 项目称采用 plugin 架构且处于 developer preview；其他机制的支持需逐版本从文档确认，不推断其都兼容 MCP 或 Agent Skills |
 | Hermes Agent | [Skills](https://hermes-agent.nousresearch.com/docs/user-guide/skills) · [MCP](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp) · [Plugins](https://hermes-agent.nousresearch.com/docs/user-guide/features/plugins) · [Hooks](https://hermes-agent.nousresearch.com/docs/user-guide/features/hooks) · [Memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) | 官方分别说明这些功能；Hermes 的 memory provider 也可作为特定插件类型，不能据此推断其他产品实现相同 |
 | Kimi Code | [Agent Skills](https://moonshotai.github.io/kimi-code/en/customization/skills.html) · [MCP](https://moonshotai.github.io/kimi-code/en/customization/mcp.html) · [Plugins](https://moonshotai.github.io/kimi-code/en/customization/plugins.html) · [Hooks](https://moonshotai.github.io/kimi-code/en/customization/hooks.html) | 官方分别说明 Skills、MCP、plugins 和 hooks；按版本查触发行为、信任确认与会话生效时机 |
+| WorkBuddy | [官方文档](https://www.workbuddy.cn/docs/workbuddy) · [产品指南](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Product-Guide) | 桌面端与 CLI 的扩展入口可能不同；以当前 WorkBuddy 文档中的版本、账号和平台要求为准 |
 
 Agent Skills 的开放格式背景可参考 [Agent Skills 规范](https://agentskills.io/)。具体客户端是否支持该格式、如何发现 Skill，仍以客户端文档为准。MCP 协议概念见[官方入门](https://modelcontextprotocol.io/docs/getting-started/intro)；其官方工具目录并不意味着其中每个服务器都适合当前任务。
 

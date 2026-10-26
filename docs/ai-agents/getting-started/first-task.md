@@ -54,11 +54,11 @@ git status --short
 
 ## 选择并安装一款工具
 
-选择[Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Hermes](../harnesses/hermes.md)或[Kimi Code](../harnesses/kimi-code.md)之一，按该页平台、认证和启动步骤操作。本页不提供伪通用启动命令。
+选择[Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Hermes](../harnesses/hermes.md)、[Kimi Code](../harnesses/kimi-code.md)或[WorkBuddy](../harnesses/workbuddy.md)之一，按该页平台、认证和启动步骤操作。本页不提供伪通用启动命令。
 
 ## 先读项目，再提出修改
 
-在 `agent-lab` 根目录启动工具。先要求只读查看 `README.md` 和 `notes/workflow.md`，报告计划修改文件和完成标准。自然语言任务示例：
+终端工具从 `agent-lab` 根目录启动；WorkBuddy 选择 `agent-lab` 作为工作空间。先要求只读查看 `README.md` 和 `notes/workflow.md`，报告计划修改文件和完成标准。自然语言任务示例：
 
 > 只修改 `notes/workflow.md`。先读取现有内容，在末尾新增“完成标准”小节，逐条写入：只修改目标文档、保留原有内容、通过 diff 确认新增内容。不要提交。完成后说明修改文件并告诉我如何检查 diff。
 

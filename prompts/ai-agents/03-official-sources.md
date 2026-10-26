@@ -8,7 +8,7 @@
 
 取材顺序：官方安装与使用文档 → 官方仓库 README 与文档目录 → 对应版本发行说明。社区资料可补充问题背景，但不能单独确立安装包身份、认证机制或平台支持。版本不明确时先读取发行说明，再选与实际发布版本匹配的文档。
 
-## 八款工具
+## 九款工具
 
 | 来源 ID | 工具与官方入口 | 本轮核验状态 | 后续必须核对 |
 | --- | --- | --- | --- |
@@ -20,6 +20,7 @@
 | S06 | [DeepSeek Harness 仓库](https://github.com/deepseek-ai/deepseek-harness)、[文档站](https://deepseek-harness.github.io/deepseek-harness/)、[中文 README](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md) | 已读取默认分支 `master` 的 README；确认 DSH 身份、预览状态及 Web UI 启动入口 | 受支持平台、Node.js 要求、CLI/Web UI 的实际关系、模型配置、profile、插件、权限与自动化 |
 | S07 | [NousResearch Hermes Agent](https://github.com/NousResearch/hermes-agent) | README 请求先超时，重试返回 HTTP 429；内容待核验 | 当前官方文档入口、安装与平台支持、模型、CLI、记忆、Skills、自动化与可选消息渠道 |
 | S08 | [Kimi Code CLI 仓库](https://github.com/MoonshotAI/kimi-code)、[中文 README](https://github.com/MoonshotAI/kimi-code/blob/main/README.zh-CN.md)、[当前中文文档](https://moonshotai.github.io/kimi-code/zh/)、[旧 Kimi CLI](https://github.com/MoonshotAI/kimi-cli)、[迁移指南](https://moonshotai.github.io/kimi-code/zh/guides/migration) | 已读取新旧仓库 README 片段；确认旧 Python CLI 归档并指向新项目 | 新版安装与认证、Git Bash 路径配置、同名发行包区别、会话迁移范围、扩展与非交互 |
+| S29 | [WorkBuddy 官方文档](https://www.workbuddy.cn/docs/workbuddy)、[产品指南](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Product-Guide)、[Windows 安装指南](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Installation-Win-Guide)、[第一个任务指南](https://www.workbuddy.cn/docs/workbuddy/FirstTask) | 2026-10-26 已读取产品定位、Windows 安装与登录、默认权限和首个任务说明；本机未安装、登录或调用任务 | 核对各平台当前安装包与系统要求、账号/组织授权、CLI 与桌面端边界、项目指令加载、MCP/Skills 支持及数据保存行为 |
 
 ### S01：Codex 的取材要求
 
@@ -81,7 +82,7 @@ MCP 练习优先选官方文件系统参考服务器，限制为独立练习目�
 
 ## 环境、配置管理与协作来源
 
-新增内容按学习位置进入正文：PowerShell 7 和 nvm 进入平台准备页，Python 配置为 P06；CC Switch 为 P16，模型 API 协议为 P17，Herdr 为 P18，组成 Harness 之后的可选“配套工具”；AGENTS.md 进入 P20。Herdr 基础布局先学，多 Agent 实践先读 P23。下表状态不等于安装实测。
+新增内容按学习位置进入正文：WorkBuddy 为第九款 Harness（P16）；PowerShell 7 和 nvm 进入平台准备页，Python 配置为 P06；CC Switch 为 P17，模型 API 协议为 P18，Herdr 为 P19，组成 Harness 之后的可选“配套工具”；AGENTS.md 进入 P21。Herdr 基础布局先学，多 Agent 实践先读 P24。下表状态不等于安装实测。
 
 | 来源 ID | 官方入口 | 本轮读取范围与后续核验 |
 | --- | --- | --- |
@@ -94,7 +95,7 @@ MCP 练习优先选官方文件系统参考服务器，限制为独立练习目�
 | S24 | [uv 安装](https://docs.astral.sh/uv/getting-started/installation/)、[Python 版本](https://docs.astral.sh/uv/concepts/python-versions/)、[项目指南](https://docs.astral.sh/uv/guides/projects/)、[工具指南](https://docs.astral.sh/uv/guides/tools/) | 已读取项目指南，确认项目、.venv、依赖、锁文件和运行的组织；安装、Python 管理和工具命令逐页待核验 |
 | S25 | [Anaconda 安装入口](https://www.anaconda.com/docs/getting-started/installation)、[Conda 环境管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)、[Conda 包管理](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-pkgs.html) | 已读取安装索引及 Conda 环境管理资料；各平台 Anaconda3 安装、shell 初始化和包管理细节待进一步核验 |
 | S27 | [54yyyu/zotero-mcp 仓库](https://github.com/54yyyu/zotero-mcp)、[Getting Started](https://github.com/54yyyu/zotero-mcp/blob/main/docs/getting-started.md)、[CLI 与 agent skill](https://github.com/54yyyu/zotero-mcp/blob/main/docs/cli.md)、[Agent 指南](https://github.com/54yyyu/zotero-mcp/blob/main/docs/for-agents.md) | 2026-10-23 核验 MCP server、`zotero-cli` CLI/agent skill 两种接入方式。此来源仅支撑 Zotero 案例，不作为 RAG、memory、plugins 或 hooks 的通用概念依据；未安装、未连接 Zotero |
-| S28 | [MCP 入门](https://modelcontextprotocol.io/docs/getting-started/intro)、[Agent Skills 规范](https://agentskills.io/specification)、[RAG 概述](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview)、[Claude Code memory](https://code.claude.com/docs/en/memory)、[Claude Code hooks](https://code.claude.com/docs/en/hooks)、[Claude Code plugins](https://code.claude.com/docs/en/plugins)、[OpenCode plugins](https://opencode.ai/docs/plugins/)、[Codex plugins](https://developers.openai.com/codex/plugins/) | 2026-10-23 已读取 MCP、Agent Skills、RAG、memory、hooks、plugins 的通用资料与产品实现示例；正文应区分通用概念和客户端特定行为，八款工具支持矩阵仍需逐项依其当前官方文档核验 |
+| S28 | [MCP 入门](https://modelcontextprotocol.io/docs/getting-started/intro)、[Agent Skills 规范](https://agentskills.io/specification)、[RAG 概述](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview)、[Claude Code memory](https://code.claude.com/docs/en/memory)、[Claude Code hooks](https://code.claude.com/docs/en/hooks)、[Claude Code plugins](https://code.claude.com/docs/en/plugins)、[OpenCode plugins](https://opencode.ai/docs/plugins/)、[Codex plugins](https://developers.openai.com/codex/plugins/) | 2026-10-23 已读取 MCP、Agent Skills、RAG、memory、hooks、plugins 的通用资料与产品实现示例；正文应区分通用概念和客户端特定行为，九款工具支持矩阵仍需逐项依其当前官方文档核验 |
 
 > S07 首轮仓库读取曾超时/限流；该状态已由 2026-10-22 后续官方文档复核补充，现以补记为准。S19、S20 等初次读取记录保留为历史，不代表后续没有新增阅读。
 
@@ -146,6 +147,10 @@ Windows 原生 / Git Bash / WSL / macOS / Ubuntu 支持证据：
 - [ ] S22–S23：确认 nvm-windows 的当前规范项目入口，分别读取两套 nvm 的官方安装与使用说明。
 - [ ] S24–S25：补齐 uv 和 Anaconda3/Conda 的各平台安装、激活、解释器检查、包管理和复现流程。
 
+## WorkBuddy 取材要求
+
+P16 依据 S29 介绍桌面 WorkBuddy 工作流。Windows 安装与登录、默认权限和第一个任务已于 2026-10-26 对照官方指南；平台安装包、账号授权范围、会话数据目录、项目指令加载、桌面端扩展与 CLI 自动化仍需逐项核对。默认权限说明工作空间边界和高风险确认；“允许完全访问”的影响需原文支持，不把用户提示词当权限隔离。图床图片地址和当前可核验的文件元数据见 `page-images.json`；来源信息缺失时明确保留缺口，不推断图片来源或作者。
+
 ## 2026-10-22 正文写作核验补记
 
 本次完成首版正文并核对若干官方入口。以下“已打开”仅为文档阅读，不是安装/登录/多平台实测；未列出的功能仍需在后续审校时逐项核对。
@@ -181,7 +186,7 @@ Windows 原生 / Git Bash / WSL / macOS / Ubuntu 支持证据：
 
 ## S26：模型 API 协议、DeepSeek 接入与临时配图
 
-核验日期：2026-10-22。新增 P17 正文，后续页面编号顺延。以下均为官方资料阅读；未配置真实密钥、未写入本机客户端配置、未发送模型请求。
+核验日期：2026-10-22。新增 P18 正文；其余后续页面编号已顺延。以下均为官方资料阅读；未配置真实密钥、未写入本机客户端配置、未发送模型请求。
 
 | 官方资料 | 已核对范围 |
 | --- | --- |
@@ -196,6 +201,6 @@ Windows 原生 / Git Bash / WSL / macOS / Ubuntu 支持证据：
 
 正文引用的两张图片通过公开访问检查，Markdown 使用对应图床地址；三张图的本地副本均已删除。备用图不再有可用图床地址，也未嵌入正文。
 
-## S27：P21 扩展概念与 Zotero MCP 示例
+## S27：P22 扩展概念与 Zotero MCP 示例
 
 核验日期：2026-10-23。读取 [项目 README](https://github.com/54yyyu/zotero-mcp)、[Getting Started](https://github.com/54yyyu/zotero-mcp/blob/main/docs/getting-started.md)、[CLI 与 agent skill](https://github.com/54yyyu/zotero-mcp/blob/main/docs/cli.md) 和 [Agent 指南](https://github.com/54yyyu/zotero-mcp/blob/main/docs/for-agents.md)。该项目作为 MCP server 与 `zotero-cli`/Skill 两种接入路线的案例；本节其他概念必须依据通用协议资料和各 Harness 官方文档解释。写作前重新核对最新包名、命令、权限与客户端支持。未安装、未启动服务或访问 Zotero library。
