@@ -17,7 +17,7 @@
 
 请依次完成：
 1. 阅读并核验各页所需官方资料，记录目标版本、实际读取页面和核验日期。
-2. 编写 P02–P07 基础页面。P03 合并 Git Bash 与 PowerShell 7；P03–P05 按平台讲 nvm；P06 讲 uv 优先与 Anaconda3/Conda；P07 给出 agent-lab 完整初始文件与任务。
+2. 编写 P02–P07 基础页面。P03 合并 Git Bash 与 PowerShell 7；Windows 先安装 Scoop，再用它安装并介绍 `rg` 与 `fd`，将 PATH 单独成节并解释 Windows 用户/系统变量、进程继承和 Git Bash `$PATH` 转换差异；P04 Ubuntu 基础工具加入 `fd-find` 和检查后创建用户级 `ln -s` 的 `fd` 命令；P05 在 macOS/Linux 的 Git 与 ripgrep 安装中增加 fd，并区分 Homebrew `fd` 与 Ubuntu/Debian `fd-find`；P03–P05 按平台讲 nvm；P06 讲 uv 优先与 Anaconda3/Conda；P07 给出 agent-lab 完整初始文件与任务。
 3. 按 P08–P16 顺序完成九篇 Harness 教程，遵守共同章节合同并展开专属内容；P16 WorkBuddy 按桌面工作台介绍，区分 WorkBuddy CLI。
 4. 按 P17–P24 顺序完成配套工具（CC Switch、模型 API 协议与 DeepSeek 接入、Herdr）、日常工作流、项目指令与 AGENTS.md、扩展、选择迁移、自动化。Herdr 先讲基础终端，多 Agent 实践要求先读 P24 的协作原则。然后完成 P25–P27 参考页面，最后完善 P01 栏目首页、交叉链接、比较表和速查。
 5. 全部正文完成后，在 zensical.toml 中将 AI Agents 插入 Home 与 Miscellaneous 之间；保留当时已有的其他导航。在 docs/index.md 添加简短入口。
@@ -28,6 +28,7 @@
 具体要求：
 - 公共概念集中说明，工具篇链接公共页，同时保留本工具的实际操作。
 - Windows 按需要分别使用 Git Bash 与 PowerShell 7 标签，WSL/macOS/Linux 使用统一平台标签及四空格缩进；区分启动终端和 Agent 内部执行 shell。
+- Windows 文档先写 Scoop 安装，再写 Scoop 安装 `ripgrep`/`fd` 与用途、验证；PATH 独立说明 Windows 系统/用户/进程范围及 Git Bash 继承转换。WSL 用 Ubuntu `fd-find`/`fdfind`，说明安全的 `ln -s`；macOS 与 Linux 均提供 Git、rg、fd 的安装和来源验证。
 - 内容按学习逻辑合并和排序：PowerShell 7 与 Git Bash 同页，AGENTS.md 撰写与项目指令/上下文同页；不能将后加专题机械放到末尾或重复建页。
 - nvm-windows 与 nvm-sh 分开讲安装、初始化、选择适用 Node LTS、验证、切换和全局包差异。解释 nvm 管理 Node.js，npm 随当前 Node 提供，不声称独立管理任意 npm 版本。
 - Python 环境优先 uv，完整覆盖安装、解释器、项目 .venv、依赖锁定、运行、工具隔离和复现；再独立讲 Anaconda3 安装、Conda 环境激活、包管理和导出，说明与 uv、Windows/WSL 的边界。

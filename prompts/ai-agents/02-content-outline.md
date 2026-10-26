@@ -122,8 +122,8 @@ P07 先准备练习，再跳转 P08–P16 所选工具完成安装与登录，�
 | 启动和验证两种 shell | Git Bash 中确认 Bash/Git 来源；PowerShell 7 中检查 PSVersionTable 和 pwsh 位置：说明误开 5.1 与新终端生效的问题 |
 | 配置 Windows Terminal | 添加或识别 Git Bash 与 PowerShell 7 profile；选择默认入口；保留 WSL profile：不全局替换系统 shell |
 | 认识目录和路径 | 在两种 shell 查看当前位置与 HOME；Windows 路径和 Bash 路径；中文和空格目录：分别提供带引号的真实语法 |
-| 检查 Git 与文件搜索 | 版本和命令来源；配置提交身份；安装与验证 rg：说明教程不要求读者公开邮箱 |
-| 理解 PATH 与环境变量 | Bash 与 PowerShell 7 语法对照；新终端生效；临时与持久变量；查找重复命令：不混用 export 和 PowerShell 赋值，不用 HOME/home 作自定义变量 |
+| 安装文件搜索工具 | 先用 PowerShell 安装 Scoop，再用 Scoop 安装 `ripgrep` 和 `fd`；说明 `rg` 与 `fd` 的用途、版本验证和命令来源，Git Bash 与 PowerShell 分别验证 |
+| 理解 PATH 与环境变量 | 单独说明 Windows 用户/系统 Path、进程环境继承与新进程读取；说明 Git Bash 启动时继承并转换 Windows PATH、Bash `$PATH` 的分隔符及路径表示差异；给出两侧查看和定位命令来源的方法，并区分临时与持久变量 |
 | Profile 与脚本执行 | 两种 shell 的启动配置；执行策略作用域；编码和外部程序：不默认全局 Bypass，不把 shell 配置当 Agent 内部 shell 配置 |
 | 用 nvm-windows 安装 Node.js | 官方项目与安装包；检查旧 Node 安装和 PATH；安装目录与链接目录：按当前官方说明处理冲突，涉及权限时解释原因 |
 | 通过 Node.js 版本管理 npm | 安装适用 LTS；列出和选择 Node 版本；验证 node/npm 的版本与来源：说明 npm 随所选 Node.js 提供，不把 nvm 说成独立 npm 版本管理器 |
@@ -133,8 +133,8 @@ P07 先准备练习，再跳转 P08–P16 所选工具完成安装与登录，�
 | 更新和排障 | 跟随原安装通道更新；pwsh 找不到；架构和 profile 问题：保留系统组件，链接 P25 |
 | 环境检查清单 | 基础检查；工具安装前检查：列出预期结果，链接 P07 和工具篇 |
 
-- 练习：在 Git Bash 和 PowerShell 7 中分别定位同一个含空格练习目录，查看 HOME、Git 和 rg 的来源；用版本信息证明没有误开 5.1。不要求运行 Agent。
-- 验收：Git Bash 和 PowerShell 7 都有完整安装、首次启动、版本检查与维护步骤；清楚 Terminal 与 shell 的区别，路径和变量语法不混用，`/c/` 与 WSL 的 `/mnt/c/` 不混用。
+- 练习：在 Git Bash 和 PowerShell 7 中分别定位同一个含空格练习目录，查看 HOME、Git、rg、fd 的来源与 PATH；用版本信息证明没有误开 5.1。不要求运行 Agent。
+- 验收：Git Bash 和 PowerShell 7 都有完整安装、首次启动、版本检查与维护步骤；Scoop 安装先于 rg/fd 安装；PATH 单独讲解且说明 Windows 系统变量与 Git Bash 进程变量的继承和转换；清楚 Terminal 与 shell 的区别，路径和变量语法不混用，`/c/` 与 WSL 的 `/mnt/c/` 不混用。
 
 ## P04：WSL 环境准备
 
@@ -146,7 +146,7 @@ P07 先准备练习，再跳转 P08–P16 所选工具完成安装与登录，�
 | --- | --- |
 | 何时选择 WSL | 原生与 WSL 的取舍；Windows 与发行版的边界：避免暗示 WSL 是每款工具的必要条件 |
 | 安装与首次启动 | 官方 Windows 安装入口；确认 WSL 2 与发行版；创建 Linux 用户：需要其他终端时明确标注 |
-| 准备 Linux 基础工具 | 包管理器；Git 和 rg；按需运行时：分别验证命令来源，不复用 Windows 包安装 |
+| 准备 Linux 基础工具 | Ubuntu/Debian 包管理器；Git、ripgrep、`fd-find` 与按需运行时；解释包名 `fd-find` 对应的 `fdfind` 命令，并给出创建 `fd` 别名的可选 `ln -s` 示例及其适用范围；分别验证命令来源，不复用 Windows 包安装 |
 | 在 WSL 安装 nvm-sh | Linux 用户目录与 shell 初始化；安装适用 Node LTS；验证 node/npm：不使用 Windows 的 nvm-windows，不复用 Windows 全局包 |
 | Python 环境入口 | Linux 版 uv 或 Conda；解释器与项目环境：链接 P06，不激活 Windows 解释器 |
 | 放置和访问项目 | Linux HOME 下的项目；挂载盘与路径转换；文件权限和性能：按微软建议说明取舍 |
@@ -167,7 +167,7 @@ P07 先准备练习，再跳转 P08–P16 所选工具完成安装与登录，�
 | 正文 H2 | 正文 H3 与必写内容 |
 | --- | --- |
 | 确认平台和 shell | macOS 版本与架构；Ubuntu LTS 版本；Bash 与 Zsh：标明适用范围 |
-| 准备基础工具 | macOS 的开发工具与 Homebrew；Ubuntu 的包管理；Git 与 rg：两个平台独立标签 |
+| 准备基础工具 | macOS 的 Git、ripgrep、fd 与 Homebrew；Ubuntu 的 Git、ripgrep、fd-find 与 apt；两个平台独立标签，说明包名/命令名差异并验证版本和命令来源 |
 | 理解用户目录和 PATH | HOME；配置文件与重新打开终端；命令来源：不假设 Intel 和 Apple Silicon 安装路径相同 |
 | 用 nvm-sh 管理 Node.js/npm | 按 Bash/Zsh 初始化 nvm；选择适用 LTS；版本和命令来源：macOS 与 Ubuntu 分别说明，npm 来自对应 Node 安装 |
 | 版本切换与全局 CLI | 切换 Node 对全局包的影响；项目版本约定；已有 Node 冲突：不假定 nvm-windows 与 nvm-sh 同命令同语义 |

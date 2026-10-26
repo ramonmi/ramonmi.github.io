@@ -11,11 +11,13 @@
 ## 终端与平台约定
 
 - Windows 环境页统一讲 Git Bash 与 PowerShell 7，日常操作以 Git Bash 为主。区分 Windows Terminal、Git Bash、PowerShell 7、Windows PowerShell 5.1 与 WSL，并验证 pwsh 的真实版本。
+- Windows 的文件搜索工具集中介绍 `rg`（ripgrep）与 `fd`：先给出 Scoop 官方安装与验证，再安装 `ripgrep` 和 `fd` 包；分别验证 PowerShell 和 Git Bash 的命令来源。PATH 单独成节，解释 Windows 用户/系统变量合并到进程环境、子进程继承，以及 Git Bash 如何读取并转换 PATH、`Path` 与 `$PATH` 的格式差异。依据官方资料说明，不暗示修改变量后已有进程会自动刷新。
 - 本仓库的自动化命令执行只允许 Git Bash；教程展示其他终端的官方安装步骤，不代表作者获得了在本机运行这些步骤的授权。
 - 官方安装使用 PowerShell 时，明确适用 7 还是 5.1；提供独立的 PowerShell 7 代码块，并解释随后回到哪个终端。不得把 PowerShell 命令改写成未经验证的 Bash 命令，不以安装新 shell 替代配置 Agent 内部 shell。
 - 每款工具明确“启动终端”和“Agent 内部执行 shell”。Git Bash 启动不代表 Agent 必然用 Bash 执行命令。
 - WSL 中使用 Linux 安装、Linux 运行时和 Linux 凭据目录；不默认与 Windows 原生共享。区分 `C:/...`、`/c/...`、`/mnt/c/...`。
 - macOS 与 Linux 使用 Bash/Zsh 兼容示例并注明差异。Linux 主例为 Ubuntu LTS，其他发行版指向官方说明。
+- WSL Ubuntu 基础工具安装包含 `fd-find`；说明包名和 `fdfind` 可执行名不同，并用安全、可检查的 `ln -s` 示例创建用户级 `fd` 名称（先检查目标目录/已有文件，解释符号链接目标和覆盖风险）。macOS 与 Linux 页面均覆盖 Git、ripgrep、fd 的安装和版本/命令来源验证；Homebrew 使用 `fd` formula，Ubuntu/Debian 使用 `fd-find` 包。
 - 路径参数始终加引号；用 `"${HOME}/..."`，不使用裸 `~`。进入项目目录前说明路径占位符。
 - Bash 环境变量写法只用于 Bash 代码块；PowerShell 与配置文件分别使用真实语法。区分临时变量、持久配置和凭据存储。
 - 不默认需要管理员权限，不推荐全局关闭安全检查或随意使用 `sudo` 修复安装。

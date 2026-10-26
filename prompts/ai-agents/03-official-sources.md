@@ -74,6 +74,9 @@ README 说明与 Pi 的 fork 关系，并列出二进制、Bun 等安装路线�
 | S12 | [Node.js 下载](https://nodejs.org/en/download)、[Node.js 测试文档](https://nodejs.org/api/test.html)、[npm 文档](https://docs.npmjs.com/) | 按工具需要准备运行时、全局命令与 JavaScript 练习 |
 | S13 | [Bun 安装](https://bun.sh/docs/installation)、[uv 文档](https://docs.astral.sh/uv/) | 仅在官方安装方式需要时引用 |
 | S14 | [ripgrep 官方仓库](https://github.com/BurntSushi/ripgrep) | 文件搜索与 PATH 验证 |
+| S30 | [Scoop 官方站点](https://scoop.sh/)、[Scoop 安装说明](https://github.com/ScoopInstaller/Install#readme) | Windows 用户态包管理器安装步骤、前置条件和 PATH 行为；执行写作时重新核验官方安装命令 |
+| S31 | [fd 官方仓库](https://github.com/sharkdp/fd)、[Homebrew formula](https://formulae.brew.sh/formula/fd)、[Ubuntu fd-find 包](https://packages.ubuntu.com/search?keywords=fd-find) | fd 功能、Scoop/Homebrew/apt 包名、Ubuntu `fdfind` 命令名称及官方别名说明 |
+| S32 | [Git for Windows FAQ](https://gitforwindows.org/faq.html)、[Git Bash 技术概览](https://github.com/git-for-windows/git/wiki/3.-Technical-overview) | Windows 环境变量向 Git Bash 进程传递、MSYS PATH 转换和路径表示；核对细节后避免将 Windows `Path` 与 Bash `$PATH` 混为一谈 |
 | S15 | [MCP 官方文档](https://modelcontextprotocol.io/docs/getting-started/intro)、[官方参考服务器](https://github.com/modelcontextprotocol/servers) | 协议概念、只读文件访问示例，核实版本与读写边界 |
 | S16 | [Agent Skills](https://agentskills.io/) | Skill 格式背景；具体 Harness 是否兼容仍依据其文档 |
 | S17 | [Zensical 导航](https://zensical.org/docs/setup/navigation/)、[Markdown](https://zensical.org/docs/authoring/markdown/)、[Content tabs](https://zensical.org/docs/authoring/content-tabs/) | 验证导航与 Markdown 呈现，并与当前仓库配置对照 |

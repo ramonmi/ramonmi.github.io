@@ -5,7 +5,7 @@ description: 在 Windows 安装并区分 Git Bash、PowerShell 7、Windows Termi
 
 # Windows 环境准备：Git Bash 与 PowerShell 7
 
-本页建立 Windows 原生终端环境，介绍 Git、ripgrep、PowerShell 7 和 nvm-windows。**日常教程命令以 Git Bash 为主**；PowerShell 示例会标明 shell。每款 Agent 使用什么内部 shell，还要继续看对应工具页。
+本页建立 Windows 原生终端环境，介绍 Git、Scoop、ripgrep（`rg`）、fd（`fd`）、PowerShell 7 和 nvm-windows。**日常教程命令以 Git Bash 为主**；需要 PowerShell 的安装命令会标明 shell。每款 Agent 使用什么内部 shell，还要继续看对应工具页。
 
 ## 先分清终端和 shell
 
@@ -25,6 +25,40 @@ printf '%s\n' "${HOME}"
 ```
 
 `command -v git` 显示当前 shell 找到的 Git 路径，`pwd` 显示当前目录。Windows 的 `C:\Users\...` 在 Git Bash 里常显示为 `/c/Users/...`。目录名有空格时始终给路径加引号。
+
+## 安装 Scoop 包管理器
+
+Scoop 是面向 Windows 命令行工具的包管理器，默认将应用安装在当前用户目录下，适合安装本页使用的搜索工具。Scoop 安装器需要 PowerShell 5.1 或更新版本、完整语言模式，以及允许脚本运行的执行策略。下面命令在**非管理员 PowerShell** 中执行；通常无需管理员权限。
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+scoop --version
+```
+
+执行策略命令只为当前 Windows 用户设置 `RemoteSigned`。如果组织策略禁止修改，先遵循设备管理员要求，不要尝试绕过策略。安装结束后重新打开 PowerShell 7 或 Git Bash，让新进程读取安装器更新的环境变量。
+
+参考：[Scoop 官方安装说明](https://github.com/ScoopInstaller/Install#readme)。
+
+## 安装 ripgrep（rg）和 fd
+
+`rg` 是 ripgrep 提供的递归文本搜索命令，默认尊重 `.gitignore`；`fd` 是便于按文件名或目录名查找的工具。先在 PowerShell 7 中通过 Scoop 安装，再分别在 PowerShell 和 Git Bash 中核对版本及命令来源：
+
+```powershell
+scoop install ripgrep fd
+rg --version
+fd --version
+Get-Command rg,fd
+```
+
+```bash
+rg --version
+fd --version
+command -v rg
+command -v fd
+```
+
+如果新开的 Git Bash 仍找不到命令，先确认它是安装 Scoop 后新开的进程，再检查 [PATH](#windows-path-git-bash)。不要因为一个 shell 找不到命令就重复安装。项目主页：[ripgrep](https://github.com/BurntSushi/ripgrep) 与 [fd](https://github.com/sharkdp/fd)。
 
 ## 安装并验证 PowerShell 7
 
@@ -84,16 +118,32 @@ Get-Command node,npm
 
 切换 Node 版本后，之前装的全局 npm CLI 可能不在新版本的全局包目录中。先检查当前的 `node`、`npm` 和工具路径，再为当前选择的 Node 环境安装所需 CLI。不要通过更新所有全局包来修复一个 PATH 问题。
 
-## 安装 ripgrep 并理解 PATH
+## Windows PATH 与 Git Bash PATH { #windows-path-git-bash }
 
-本项目的文本搜索示例使用 `rg`。如未安装，按 [ripgrep 官方项目](https://github.com/BurntSushi/ripgrep)选择可信发行方式。确认当前命令来源：
+Windows 的环境变量设置分为用户级和系统级；系统登录环境会把两者提供给进程。每个进程读取自己的环境变量表，启动子进程时通常把这份环境继续传下去，不会让子进程实时查询设置界面。因此修改 Path 后应从已更新的 Windows 桌面会话重新打开终端；从旧终端启动的新 shell 也可能继续继承旧值。Scoop 默认把应用 shims 放在用户目录下的 `scoop\\shims`，并将其加入用户 Path。
 
-```bash
-rg --version
-command -v rg
+在 PowerShell 中可以分别查看系统、用户和当前进程的 Path：
+
+```powershell
+[Environment]::GetEnvironmentVariable('Path', 'Machine') -split ';'
+[Environment]::GetEnvironmentVariable('Path', 'User') -split ';'
+$env:Path -split ';'
+Get-Command rg,fd
 ```
 
-PowerShell 7 中可使用 `Get-Command rg`。打开新终端后再次检查 PATH；同名程序有多个版本时，看命令来源比重复安装更有帮助。
+Git Bash 启动时从启动它的 Windows 进程继承环境。Git for Windows 的 MSYS 层会把 Windows 风格的 PATH 条目转换为 Bash 使用的路径格式；因此 Bash 中看到的是冒号分隔的 `$PATH`，常见路径也会显示为 `/c/...`，而 Windows 设置界面使用分号分隔的 `Path` 条目。两边指向的可执行程序可以相同，但变量表示、路径分隔符和路径格式不同。
+
+```bash
+printf '%s\n' "$PATH" | tr ':' '\n'
+command -v rg
+command -v fd
+```
+
+在 Git Bash 中执行 `export NAME=value` 只修改当前 Bash 进程及其后续子进程的环境，不会写回 Windows 用户或系统环境变量；PowerShell 的 `$env:NAME = 'value'` 同样是当前进程范围。需要持久修改 Windows Path 时，使用 Windows 的环境变量设置界面或对应安装器，再新开终端。需要只为 Git Bash 持久设置的变量，可在 Bash profile 中设置。避免把 Windows `Path`、PowerShell `$env:Path` 与 Bash `$PATH` 当成可互换语法。
+
+参考：[PowerShell 环境变量作用域](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables)、[Git for Windows 技术概览](https://github.com/git-for-windows/git/wiki/3.-Technical-overview)。
+
+## Shell 变量语法
 
 Bash 临时环境变量使用 `NAME=value command` 或 `export NAME=value`。PowerShell 7 使用 `$env:NAME = 'value'`。持久化到 shell profile 前说明文件和作用范围。不要在示例中把保留变量 `$HOME`、`$home` 当自定义变量名。
 
@@ -123,4 +173,4 @@ PowerShell 7 profile 与 Bash 的 `~/.bashrc` 是不同文件；配置变量前�
 - [PowerShell 7 安装](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows)
 - [Windows Terminal profile](https://learn.microsoft.com/windows/terminal/customize-settings/profile-general)
 - [nvm-windows](https://github.com/coreybutler/nvm-windows)
-- [Node.js](https://nodejs.org/)、[ripgrep](https://github.com/BurntSushi/ripgrep)
+- [Node.js](https://nodejs.org/)、[Scoop 安装说明](https://github.com/ScoopInstaller/Install#readme)、[ripgrep](https://github.com/BurntSushi/ripgrep)、[fd](https://github.com/sharkdp/fd)

@@ -19,25 +19,36 @@ printf '%s\n' "${HOME}"
 
 macOS 默认 shell 常为 Zsh；Ubuntu 常用 Bash。先确认正在使用的 shell，再编辑对应 profile。
 
-## 安装 Git 与 rg
+## 安装 Git、ripgrep（rg）与 fd
 
-macOS 可从 Apple 开发者工具和官方 Homebrew 来源安装 Git。Ubuntu LTS 示例：
+`rg`（ripgrep）用于递归搜索文本，`fd` 用于按名称查找文件和目录。macOS 可使用 Homebrew 安装三款工具；若尚未安装 Git，也可按 Apple 开发者工具提示安装：
+
+```bash
+brew install git ripgrep fd
+git --version
+rg --version
+fd --version
+command -v git
+command -v rg
+command -v fd
+```
+
+Ubuntu LTS 使用 apt 安装。Ubuntu/Debian 的 fd 包名是 `fd-find`，命令名是 `fdfind`：
 
 ```bash
 sudo apt update
-sudo apt install git ripgrep curl ca-certificates build-essential
-```
-
-验证命令来源：
-
-```bash
+sudo apt install git ripgrep fd-find curl ca-certificates build-essential
 git --version
 rg --version
+fdfind --version
 command -v git
 command -v rg
+command -v fdfind
 ```
 
-Ubuntu 包管理命令只针对 Ubuntu/Debian 系；其他发行版阅读其官方安装说明。
+如需在 Ubuntu/Debian 中使用文档常见的 `fd` 命令，可参照 [WSL 环境准备](wsl.md)创建 `~/.local/bin/fd` 符号链接；确保目录在 PATH 中并先检查同名目标，避免覆盖已有文件。其他 Linux 发行版应按其官方包管理器安装 Git、ripgrep 和 fd，包名与命令名可能不同。
+
+参考：[ripgrep 安装说明](https://github.com/BurntSushi/ripgrep#installation)、[fd 安装说明](https://github.com/sharkdp/fd#installation)、[Homebrew fd formula](https://formulae.brew.sh/formula/fd)。
 
 ## 用 nvm-sh 管理 Node.js 与 npm
 

@@ -8,6 +8,8 @@
 
 Windows 环境准备在同一页讲清 Git Bash 与 PowerShell 7 的安装、验证和分工，并说明 Windows PowerShell 5.1、Windows Terminal 的区别。日常操作以 Git Bash 为主。工具不支持某条路线时，说明官方支持状况，并提供可行路线。macOS 与 Ubuntu LTS 提供完整的安装、认证入口和验证步骤；不将 Ubuntu 命令标成通用 Linux 命令。
 
+P03 将 `rg`（ripgrep）和 `fd` 的介绍与安装放在同一节；Windows 安装路线使用 Scoop，先安装 Scoop，再用 Scoop 安装两款工具。PATH 独立成节，说明 Windows 用户/系统环境变量与进程环境的继承关系，以及 Git Bash 如何从 Windows 环境获取并转换 PATH；不把 Git Bash 中的 `$PATH` 与 Windows 设置界面中的 `Path` 说成完全相同的表示。P04 Ubuntu 基础工具安装包含 `fd-find`，解释 Ubuntu 包名与 `fdfind` 命令名，并给出可选 `ln -s` 命令别名的做法。P05 同时覆盖 macOS 和 Linux 的 Git、ripgrep、fd 安装与验证，并区分 Homebrew 和 Ubuntu/Debian 包名。
+
 ## 交付范围
 
 核心规划由 `prompts/ai-agents/` 下的七份 Markdown 文件组成：入口、计划、大纲、来源、规范、提示词、验收清单。正文、`zensical.toml` 导航和首页入口已接入；协议页与配图已完成，图片上传状态和地址见配图清单。

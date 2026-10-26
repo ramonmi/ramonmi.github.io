@@ -35,6 +35,8 @@
 | 正文根目录 | `docs/ai-agents/` |
 | 当前页数 | 27 页：栏目首页 1、入门 6、Harness 9、配套工具 3、工作流与协作 5、参考 3 |
 | Windows 主线 | 同一页覆盖 Git Bash 与 PowerShell 7 安装、验证和分工，日常示例以 Git Bash 为主 |
+| 文件搜索工具 | Windows 先安装 Scoop，再安装 `rg` 与 `fd`；WSL 使用 `fd-find` 并解释 `fdfind`/`ln -s`；macOS/Linux 均安装并验证 Git、rg、fd |
+| Windows PATH | 单独解释 Windows 用户/系统环境变量、进程继承与 Git Bash `$PATH` 的继承和格式转换 |
 | Node.js/npm 管理 | Windows 原生按 nvm-windows，WSL/macOS/Linux 按 nvm-sh；npm 随所选 Node.js 版本提供 |
 | Python 环境 | 优先 uv，兼顾 Anaconda3/Conda，解释项目环境、工具环境与解释器来源 |
 | WSL 路线 | WSL 2，默认以 Ubuntu LTS 展示完整流程 |

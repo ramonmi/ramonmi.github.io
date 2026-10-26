@@ -28,9 +28,9 @@
 | --- | --- | --- | --- | --- | --- |
 | P01 | AI Agents | 草稿 | 部分核验 | 未审校 | 核实全部内部链接与路线入口 |
 | P02 | 认识 AI Agents 与 Harness | 草稿 | 基础概念 | 未审校 | 检查交叉链接和示例 |
-| P03 | Windows 环境准备：Git Bash 与 PowerShell 7 | 草稿 | 部分核验 | 未审校 | nvm-windows 路线与 Terminal 细节待复核 |
-| P04 | WSL 环境准备 | 草稿 | 部分核验 | 未审校 | 按微软当前说明复核安装命令 |
-| P05 | macOS 与 Linux 环境准备 | 草稿 | 部分核验 | 未审校 | nvm-sh 命令需据 README 复核 |
+| P03 | Windows 环境准备：Git Bash 与 PowerShell 7 | 草稿 | 部分核验 | 未审校 | 已补 Scoop、rg/fd 和 Windows/Git Bash PATH 说明；nvm-windows 路线与 Terminal 细节待复核 |
+| P04 | WSL 环境准备 | 草稿 | 部分核验 | 未审校 | 已补 fd-find/fdfind 与用户级链接；WSL 安装命令仍按微软当前说明复核 |
+| P05 | macOS 与 Linux 环境准备 | 草稿 | 部分核验 | 未审校 | 已补 Homebrew/apt 的 fd 安装；nvm-sh 命令需据 README 复核 |
 | P06 | Python 环境配置：uv 与 Anaconda3 | 草稿 | 部分核验 | 未审校 | 核对安装页、shell 初始化和跨平台命令 |
 | P07 | 完成第一个 Agent 任务 | 草稿 | 示例已写 | 未审校 | 检查 heredoc 兼容性和链接 |
 | P08 | Codex CLI | 草稿 | 官方入口已查 | 未审校 | 具体安装、平台、认证和权限步骤待核验 |
@@ -72,6 +72,10 @@
 
 - [ ] P03 完整覆盖 Git Bash、PowerShell 7 安装与验证，区分 Terminal、5.1、pwsh、Git Bash 与 WSL。
 - [ ] PowerShell 7 有稳定版安装渠道、Terminal profile、语法对照、执行策略作用域、更新与排障。
+- [x] P03 在同一节介绍并验证 `rg` 与 `fd`；先按官方步骤安装 Scoop，再通过 Scoop 安装 `ripgrep` 与 `fd`。
+- [x] P03 将 PATH 单独成节，解释 Windows 用户/系统变量、进程环境继承、新终端刷新，以及 Git Bash 对继承 PATH 的转换和 `$PATH` 表示；两侧均有查看 PATH 与定位命令来源的示例。
+- [x] P04 Ubuntu 基础工具包含 `fd-find`，说明 `fdfind` 命令名，并提供有目标检查的用户级 `ln -s` 可选示例。
+- [x] P05 macOS 与 Linux 均有 Git、ripgrep、fd 的安装与验证；区分 Homebrew 的 `fd` 与 Ubuntu/Debian 的 `fd-find`。
 - [ ] nvm-windows 与 nvm-sh 分平台讲解，安装、初始化、适用 LTS、切换、版本与命令来源均清楚。
 - [ ] npm 随当前 Node.js 版本提供；说明全局 CLI 在切换 Node 后的变化，不默认独立升级 npm。
 - [ ] P06 以 uv 为完整主线，覆盖解释器、项目环境、依赖、锁文件、运行、工具环境与复现。
@@ -149,6 +153,7 @@ uv run zensical build --clean
 | 页面配图上传与链接替换 | 已完成 | 17 张图片已上传并验证；正文均引用图床地址，本地副本已清理 |
 | Zensical 构建 | 已通过 | 2026-10-22；`uv run --no-sync zensical build --clean`，退出码 0，输出 `No issues found` |
 | WorkBuddy 页面后的 Zensical 构建 | 已通过 | 2026-10-26；`uv run zensical build --clean`，退出码 0，输出 `No issues found` |
+| 文件搜索工具文档更新后的 Zensical 构建 | 已通过 | 2026-10-26；`uv run --no-sync zensical build --clean`，退出码 0，输出 `No issues found` |
 | 宽屏/移动宽度、深浅配色 | 未执行 | 尚未进行浏览器视觉检查 |
 | 软件安装、版本切换、环境创建 | 未执行 | 不属于本任务执行范围 |
 | Harness 模型调用 | 未执行 | 不属于本任务执行范围 |

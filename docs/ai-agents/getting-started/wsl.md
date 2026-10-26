@@ -29,12 +29,33 @@ wsl --list --verbose
 
 ```bash
 sudo apt update
-sudo apt install git ripgrep build-essential curl unzip
+sudo apt install git ripgrep fd-find build-essential curl unzip
 git --version
 rg --version
+fdfind --version
 ```
 
 `sudo` 仅用于本段的系统包安装。按所需工具安装运行时，不为所有 Harness 一次安装 Node、Bun 和 Python。
+
+Ubuntu/Debian 的包名是 `fd-find`，命令名为 `fdfind`。如果希望按上游文档使用 `fd` 命令，可在用户的 `~/.local/bin` 创建符号链接。先确保目录在 PATH 中，并检查是否已有同名文件；以下命令不会覆盖已有文件或链接：
+
+```bash
+mkdir -p "${HOME}/.local/bin"
+if [[ ":${PATH}:" != *":${HOME}/.local/bin:"* ]]; then
+    export PATH="${HOME}/.local/bin:${PATH}"
+fi
+if [[ -e "${HOME}/.local/bin/fd" || -L "${HOME}/.local/bin/fd" ]]; then
+    printf '%s\n' "${HOME}/.local/bin/fd 已存在；请先检查目标，不要覆盖。"
+elif ! command -v fdfind >/dev/null 2>&1; then
+    printf '%s\n' "找不到 fdfind；请先确认 fd-find 已安装。" >&2
+    exit 1
+else
+    ln -s "$(command -v fdfind)" "${HOME}/.local/bin/fd"
+fi
+fd --version
+```
+
+`export PATH=...` 只影响当前 shell 和之后启动的子进程。若新开终端后仍需使用此目录，可将同一条 PATH 设置加入 Bash 的 `~/.bashrc`，然后重新载入或开启新终端。符号链接保存 `fdfind` 的目标路径；卸载或移动目标程序后需重新检查链接。更多细节见 [fd 官方安装说明](https://github.com/sharkdp/fd#on-ubuntu)。
 
 ## 在 WSL 安装 nvm-sh
 
@@ -86,6 +107,10 @@ uname -a
 pwd
 git --version
 command -v git
+rg --version
+fdfind --version
+command -v rg
+command -v fdfind
 ```
 
 确认这是 Linux shell，Git 路径位于 WSL 环境，项目目录符合预期。然后阅读[第一个 Agent 任务](first-task.md)，并从[栏目首页](../index.md)选择 Harness。
