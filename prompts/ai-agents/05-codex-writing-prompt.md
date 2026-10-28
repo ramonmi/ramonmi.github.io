@@ -33,7 +33,7 @@
 - nvm-windows 与 nvm-sh 分开讲安装、初始化、选择适用 Node LTS、验证、切换和全局包差异。解释 nvm 管理 Node.js，npm 随当前 Node 提供，不声称独立管理任意 npm 版本。
 - Python 环境优先 uv，完整覆盖安装、解释器、项目 .venv、依赖锁定、运行、工具隔离和复现；再独立讲 Anaconda3 安装、Conda 环境激活、包管理和导出，说明与 uv、Windows/WSL 的边界。
 - AGENTS.md 给出 agent-lab 与 Zensical 两套完整模板、根/子目录规则和验证方法；不覆盖真实项目规则，不假定九款工具加载规则相同。
-- CC Switch 按受支持客户端编写安装、配置切换、验证及备份恢复；Herdr 先讲终端布局，再讲状态和协作，所有控制示例以受管理环境与真实 ID 为前提。
+- CC Switch 按受支持客户端编写安装、配置切换、验证及备份恢复；Herdr 介绍 Agent Multiplexer、状态汇总、detach 与恢复、Agent 自主编排、pane/agent CLI 和 SSH machine。结合 Hermes WeCom 给出本机与 SSH 控制和 Cron 示例，标明网关环境、访问控制、真实 ID、恢复边界及未实测范围。
 - 根据当前官方资料确认项目身份、版本、安装包、平台支持、配置、命令和认证方式。
 - P22 通用介绍并比较 prompts、Skills、MCP、RAG、memory、plugins 和 hooks 的职责、适用时机、边界与组合方式；Zotero 只用 `54yyyu/zotero-mcp` 展示 MCP server 和 `zotero-cli` Skill 两种接入路线。不要用 Zotero 项目替代通用解释，也不要把该项目的功能推及所有工具；核验当前官方资料与权限边界。
 - P15 WorkBuddy 以桌面流程为主，核实每个平台安装入口、登录方式、工作空间和默认权限；对项目指令、会话保存及扩展不作未经官方确认的承诺。桌面交互与 CLI 分开描述。

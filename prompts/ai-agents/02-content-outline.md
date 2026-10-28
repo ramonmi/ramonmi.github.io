@@ -514,14 +514,16 @@ P07 先准备练习，再跳转 P08–P16 所选工具完成安装与登录，�
 
 | 正文 H2 | 正文 H3 与必写内容 |
 | --- | --- |
-| Herdr 是什么 | 终端组织与进程；workspace、tab、pane、Agent；支持平台和已识别 Agent：不把任意运行中的 CLI 都标成已识别 Agent |
+| Herdr 是什么 | Agent Multiplexer 与面向编码代理的 tmux 类比；workspace、tab、pane；已识别 Agent 和侧栏状态汇总，说明状态识别限制 |
 | 安装与启动 | Windows 官方方式及平台限制；WSL/macOS/Linux；版本检查和初次启动：重读当前 Windows 指南，说明 PATH、shell 和会话位置 |
 | 布局与日常操作 | 建立标签和分屏；选择 cwd 与 shell；聚焦、滚动和读取：先用两个普通终端演示，不需要模型调用 |
 | 运行 Harness 与观察状态 | 在 pane 启动已安装工具；命名与识别；idle/working/blocked/done/unknown：状态名称与判定以当前 CLI 为准，不把 unknown 当完成 |
-| 分离、恢复和关闭 | 退出客户端与停止服务；进程仍运行的条件；重启后布局恢复与进程恢复：明确关闭窗口和机器重启的区别 |
+| 分离、恢复和关闭 | Ctrl+B Q detach 与重新 attach；进程、布局和 Agent 原生会话恢复的区别，以及 integration 要求 |
 | 在受管理 pane 中使用 CLI | HERDR_ENV 检查；help 和只读发现；当前 pane 与实际 ID：控制前验证环境，只从响应读取 ID，不抄示例 ID |
-| 提交任务与收集结果 | 显式选择 Agent；发送一次任务；等待并读取输出：区分提交成功、进入工作状态、任务完成和需要用户确认 |
-| 与多 Agent 工作流结合 | 一写一审或独立只读子任务；保持 cwd；必要时隔离 worktree：不默认新增复杂布局，不让多个任务写同一文件 |
+| 提交任务与收集结果 | 明确 CLI 中 pane send-text/run、agent start/prompt/read 的目标与语义；选择 Agent、等待、读取输出 |
+| 与多 Agent 工作流结合 | Agent 用 CLI/API 编排 pane、委派及汇总；一写一审、明确 cwd 和 worktree 隔离 |
+| SSH 机器 | 交互式 machine add、SSH 和远端服务前提；以 --machine 路由，分别发现远端 ID |
+| 通过 Hermes 企业微信控制 Herdr | WeCom 访问控制、网关环境、local 后端、HERDR_ENV 验证；本机和 SSH 的即时任务与 Cron 定时示例；区分 Agent 会话恢复与调度恢复，注明未实测 |
 | 超时、阻塞与失败处理 | 先读取当前状态；确认是否已提交；避免重复投递：遇审批或提问先核实，不自动替用户确认 |
 | 维护与进阶入口 | CLI/服务版本；SSH 与会话概览；配置备份和卸载：远程连接列可选，不自动停止主服务或用户 pane |
 
