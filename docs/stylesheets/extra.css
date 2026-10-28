@@ -1,0 +1,10 @@
+/* Justify ordinary article paragraphs without changing nested components. */
+.md-content__inner.md-typeset > p {
+  text-align: justify;
+}
+
+/* Wrap prose in text blocks while preserving explicit line breaks. */
+.md-typeset .language-text pre > code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
