@@ -51,9 +51,9 @@ nav = [
       "ai-agents/harnesses/pi.md",
       "ai-agents/harnesses/oh-my-pi.md",
       "ai-agents/harnesses/dsh.md",
-      "ai-agents/harnesses/hermes.md",
       "ai-agents/harnesses/kimi-code.md",
       "ai-agents/harnesses/workbuddy.md",
+      "ai-agents/harnesses/hermes.md",
     ]},
     { "配套工具" = [
       "ai-agents/tools/cc-switch.md",

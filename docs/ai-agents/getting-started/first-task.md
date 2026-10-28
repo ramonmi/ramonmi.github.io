@@ -54,7 +54,7 @@ git status --short
 
 ## 选择并安装一款工具
 
-选择[Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Hermes](../harnesses/hermes.md)、[Kimi Code](../harnesses/kimi-code.md)或[WorkBuddy](../harnesses/workbuddy.md)之一，按该页平台、认证和启动步骤操作。本页不提供伪通用启动命令。
+选择[Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Kimi Code](../harnesses/kimi-code.md)、[WorkBuddy](../harnesses/workbuddy.md)或[Hermes](../harnesses/hermes.md)之一，按该页平台、认证和启动步骤操作。本页不提供伪通用启动命令。
 
 ## 先读项目，再提出修改
 

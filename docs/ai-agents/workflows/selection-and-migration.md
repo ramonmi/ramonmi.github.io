@@ -9,7 +9,7 @@ description: 按平台、服务、工作习惯和扩展需求选择 Harness，�
 
 ## 先按约束筛选
 
-先确认平台与 shell、模型服务/账号、是否接受 API 按量费用、是否需离线或自托管、扩展和团队规则要求。工具列表见 [Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Hermes](../harnesses/hermes.md)、[Kimi Code](../harnesses/kimi-code.md)和[WorkBuddy](../harnesses/workbuddy.md)。
+先确认平台与 shell、模型服务/账号、是否接受 API 按量费用、是否需离线或自托管、扩展和团队规则要求。工具列表见 [Codex](../harnesses/codex.md)、[Claude Code](../harnesses/claude-code.md)、[OpenCode](../harnesses/opencode.md)、[Pi](../harnesses/pi.md)、[oh-my-pi](../harnesses/oh-my-pi.md)、[DSH](../harnesses/dsh.md)、[Kimi Code](../harnesses/kimi-code.md)、[WorkBuddy](../harnesses/workbuddy.md)和[Hermes](../harnesses/hermes.md)。
 
 ## 对照维度
 

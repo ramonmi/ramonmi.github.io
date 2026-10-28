@@ -21,9 +21,9 @@
 
 完整撰写时，将 [写作提示词](05-codex-writing-prompt.md) 的“完整写作任务”代码块作为任务发给 Codex。该任务覆盖全部 27 页和最终站点接入。
 
-分章撰写时，复制“单章任务”，将页面编号替换为大纲中的 P01–P27，例如 P08 对应 Codex CLI、P16 对应 WorkBuddy。分章模式只处理指定页面及必要的记录，不提前加入指向未完成页面的站点导航。
+分章撰写时，复制“单章任务”，将页面编号替换为大纲中的 P01–P27，例如 P08 对应 Codex CLI、P16 对应 Hermes。分章模式只处理指定页面及必要的记录，不提前加入指向未完成页面的站点导航。
 
-页面按最终阅读顺序连续编号：先准备环境、学习 Harness，再按需使用配套工具，随后进入日常工作流、项目指令、扩展、迁移和自动化。九款 Harness 为 P08–P16，WorkBuddy 为 P16；配套工具依次为 P17 CC Switch、P18 模型 API 协议与接入、P19 Herdr；AGENTS.md 撰写与上下文管理合并在 P21。Python 环境配置为 P06。Herdr 基础布局先学，多 Agent 部分先读 P24 的分工与隔离原则再实践。页面编号、详细大纲和导航顺序一致。
+页面按最终阅读顺序连续编号：先准备环境、学习 Harness，再按需使用配套工具，随后进入日常工作流、项目指令、扩展、迁移和自动化。九款 Harness 为 P08–P16，Hermes 为 P16；配套工具依次为 P17 CC Switch、P18 模型 API 协议与接入、P19 Herdr；AGENTS.md 撰写与上下文管理合并在 P21。Python 环境配置为 P06。Herdr 基础布局先学，多 Agent 部分先读 P24 的分工与隔离原则再实践。页面编号、详细大纲和导航顺序一致。
 
 上下文中断后，使用“续写任务”，先读进度和来源记录，再继续下一项。审校时使用“审校任务”。
 
@@ -41,7 +41,7 @@
 | Python 环境 | 优先 uv，兼顾 Anaconda3/Conda，解释项目环境、工具环境与解释器来源 |
 | WSL 路线 | WSL 2，默认以 Ubuntu LTS 展示完整流程 |
 | macOS/Linux | 分别提供操作步骤，Linux 默认以 Ubuntu LTS 展示 |
-| 工具范围 | Codex CLI、Claude Code CLI、OpenCode、Pi、oh-my-pi、DSH、Hermes Agent、Kimi Code CLI、WorkBuddy |
+| 工具范围 | Codex CLI、Claude Code CLI、OpenCode、Pi、oh-my-pi、DSH、Kimi Code CLI、WorkBuddy、Hermes Agent |
 | 配套专题 | CC Switch 配置管理、Herdr 终端组织与协作、AGENTS.md 撰写实战 |
 | DSH 身份 | DeepSeek Harness，以官方仓库为依据 |
 | 首版平台深度 | Windows 主线详讲；其他平台有独立、可操作的安装和验证流程 |

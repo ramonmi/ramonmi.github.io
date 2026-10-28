@@ -18,7 +18,7 @@
 | S04 | [Pi 当前项目](https://github.com/earendil-works/pi)、[旧入口](https://github.com/badlogic/pi-mono)、[官方站点](https://pi.dev) | 已读取旧入口的 coding-agent README；正文指向当前组织与包名 | 当前仓库与包名、安装器和 npm 路线、Windows shell、认证、扩展、会话、print/JSON/RPC |
 | S05 | [oh-my-pi 仓库](https://github.com/can1357/oh-my-pi)、[官方站点](https://omp.sh)、[coding-agent 文档目录](https://github.com/can1357/oh-my-pi/tree/main/packages/coding-agent) | 已读取根 README 的项目关系与安装片段 | Windows 安装、二进制与运行时路线、Pi 兼容范围、配置、编辑和代码工具、扩展、自动化 |
 | S06 | [DeepSeek Harness 仓库](https://github.com/deepseek-ai/deepseek-harness)、[文档站](https://deepseek-harness.github.io/deepseek-harness/)、[中文 README](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md) | 已读取默认分支 `master` 的 README；确认 DSH 身份、预览状态及 Web UI 启动入口 | 受支持平台、Node.js 要求、CLI/Web UI 的实际关系、模型配置、profile、插件、权限与自动化 |
-| S07 | [NousResearch Hermes Agent](https://github.com/NousResearch/hermes-agent) | README 请求先超时，重试返回 HTTP 429；内容待核验 | 当前官方文档入口、安装与平台支持、模型、CLI、记忆、Skills、自动化与可选消息渠道 |
+| S07 | [NousResearch Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2026-10-28 读取 README、技能、记忆、工具、Cron 和 WeCom 官方资料；未本机实测 | 按版本核对工具数、配置和消息渠道；见下方取材要求 |
 | S08 | [Kimi Code CLI 仓库](https://github.com/MoonshotAI/kimi-code)、[中文 README](https://github.com/MoonshotAI/kimi-code/blob/main/README.zh-CN.md)、[当前中文文档](https://moonshotai.github.io/kimi-code/zh/)、[旧 Kimi CLI](https://github.com/MoonshotAI/kimi-cli)、[迁移指南](https://moonshotai.github.io/kimi-code/zh/guides/migration) | 已读取新旧仓库 README 片段；确认旧 Python CLI 归档并指向新项目 | 新版安装与认证、Git Bash 路径配置、同名发行包区别、会话迁移范围、扩展与非交互 |
 | S29 | [WorkBuddy 官方文档](https://www.workbuddy.cn/docs/workbuddy)、[产品指南](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Product-Guide)、[Windows 安装指南](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Installation-Win-Guide)、[第一个任务指南](https://www.workbuddy.cn/docs/workbuddy/FirstTask) | 2026-10-26 已读取产品定位、Windows 安装与登录、默认权限和首个任务说明；本机未安装、登录或调用任务 | 核对各平台当前安装包与系统要求、账号/组织授权、CLI 与桌面端边界、项目指令加载、MCP/Skills 支持及数据保存行为 |
 
@@ -54,7 +54,7 @@ README 说明与 Pi 的 fork 关系，并列出二进制、Bun 等安装路线�
 
 ### S07：Hermes 的取材要求
 
-需求中的 Hermes 按 NousResearch Hermes Agent 规划。正式落笔前必须读取该官方项目及其所链接文档，确认发行身份和入口。当前未核验的记忆、Skills、消息渠道和定时任务都是待调查主题，不能仅凭本大纲确认可用性。
+Hermes 按 NousResearch 官方项目介绍。参考[技能](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)、[记忆](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory)、[工具](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)、[Cron](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron)与 [WeCom](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/wecom)。说明技能可含脚本但主体为操作指南，记忆有容量和会话快照边界，WeCom 应配置访问控制；官方当前概述为 40+ 工具，数量随版本与启用情况变化。
 
 ### S08：Kimi Code 的取材要求
 
@@ -85,7 +85,7 @@ MCP 练习优先选官方文件系统参考服务器，限制为独立练习目�
 
 ## 环境、配置管理与协作来源
 
-新增内容按学习位置进入正文：WorkBuddy 为第九款 Harness（P16）；PowerShell 7 和 nvm 进入平台准备页，Python 配置为 P06；CC Switch 为 P17，模型 API 协议为 P18，Herdr 为 P19，组成 Harness 之后的可选“配套工具”；AGENTS.md 进入 P21。Herdr 基础布局先学，多 Agent 实践先读 P24。下表状态不等于安装实测。
+新增内容按学习位置进入正文：WorkBuddy 为 P15，Hermes 为第九款 Harness（P16）；PowerShell 7 和 nvm 进入平台准备页，Python 配置为 P06；CC Switch 为 P17，模型 API 协议为 P18，Herdr 为 P19，组成 Harness 之后的可选“配套工具”；AGENTS.md 进入 P21。Herdr 基础布局先学，多 Agent 实践先读 P24。下表状态不等于安装实测。
 
 | 来源 ID | 官方入口 | 本轮读取范围与后续核验 |
 | --- | --- | --- |
@@ -152,7 +152,7 @@ Windows 原生 / Git Bash / WSL / macOS / Ubuntu 支持证据：
 
 ## WorkBuddy 取材要求
 
-P16 依据 S29 介绍桌面 WorkBuddy 工作流。Windows 安装与登录、默认权限和第一个任务已于 2026-10-26 对照官方指南；平台安装包、账号授权范围、会话数据目录、项目指令加载、桌面端扩展与 CLI 自动化仍需逐项核对。默认权限说明工作空间边界和高风险确认；“允许完全访问”的影响需原文支持，不把用户提示词当权限隔离。图床图片地址和当前可核验的文件元数据见 `page-images.json`；来源信息缺失时明确保留缺口，不推断图片来源或作者。
+P15 依据 S29 介绍桌面 WorkBuddy 工作流。Windows 安装与登录、默认权限和第一个任务已于 2026-10-26 对照官方指南；平台安装包、账号授权范围、会话数据目录、项目指令加载、桌面端扩展与 CLI 自动化仍需逐项核对。默认权限说明工作空间边界和高风险确认；“允许完全访问”的影响需原文支持，不把用户提示词当权限隔离。图床图片地址和当前可核验的文件元数据见 `page-images.json`；来源信息缺失时明确保留缺口，不推断图片来源或作者。
 
 ## 2026-10-22 正文写作核验补记
 

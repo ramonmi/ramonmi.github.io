@@ -18,7 +18,7 @@
 请依次完成：
 1. 阅读并核验各页所需官方资料，记录目标版本、实际读取页面和核验日期。
 2. 编写 P02–P07 基础页面。P03 合并 Git Bash 与 PowerShell 7；Windows 先安装 Scoop，再用它安装并介绍 `rg` 与 `fd`，将 PATH 单独成节并解释 Windows 用户/系统变量、进程继承和 Git Bash `$PATH` 转换差异；P04 Ubuntu 基础工具加入 `fd-find` 和检查后创建用户级 `ln -s` 的 `fd` 命令；P05 在 macOS/Linux 的 Git 与 ripgrep 安装中增加 fd，并区分 Homebrew `fd` 与 Ubuntu/Debian `fd-find`；P03–P05 按平台讲 nvm；P06 讲 uv 优先与 Anaconda3/Conda；P07 给出 agent-lab 完整初始文件与任务。
-3. 按 P08–P16 顺序完成九篇 Harness 教程，遵守共同章节合同并展开专属内容；P16 WorkBuddy 按桌面工作台介绍，区分 WorkBuddy CLI。
+3. 按 P08–P16 顺序完成九篇 Harness 教程，遵守共同章节合同并展开专属内容；P15 WorkBuddy 按桌面工作台介绍，P16 Hermes 介绍学习闭环与消息网关。
 4. 按 P17–P24 顺序完成配套工具（CC Switch、模型 API 协议与 DeepSeek 接入、Herdr）、日常工作流、项目指令与 AGENTS.md、扩展、选择迁移、自动化。Herdr 先讲基础终端，多 Agent 实践要求先读 P24 的协作原则。然后完成 P25–P27 参考页面，最后完善 P01 栏目首页、交叉链接、比较表和速查。
 5. 全部正文完成后，在 zensical.toml 中将 AI Agents 插入 Home 与 Miscellaneous 之间；保留当时已有的其他导航。在 docs/index.md 添加简短入口。
 6. 按验收清单审校，使用现有可用环境执行文档构建，并记录实际检查结果。
@@ -36,7 +36,8 @@
 - CC Switch 按受支持客户端编写安装、配置切换、验证及备份恢复；Herdr 先讲终端布局，再讲状态和协作，所有控制示例以受管理环境与真实 ID 为前提。
 - 根据当前官方资料确认项目身份、版本、安装包、平台支持、配置、命令和认证方式。
 - P22 通用介绍并比较 prompts、Skills、MCP、RAG、memory、plugins 和 hooks 的职责、适用时机、边界与组合方式；Zotero 只用 `54yyyu/zotero-mcp` 展示 MCP server 和 `zotero-cli` Skill 两种接入路线。不要用 Zotero 项目替代通用解释，也不要把该项目的功能推及所有工具；核验当前官方资料与权限边界。
-- P16 WorkBuddy 以桌面流程为主，核实每个平台安装入口、登录方式、工作空间和默认权限；对项目指令、会话保存及扩展不作未经官方确认的承诺。桌面交互与 CLI 分开描述。
+- P15 WorkBuddy 以桌面流程为主，核实每个平台安装入口、登录方式、工作空间和默认权限；对项目指令、会话保存及扩展不作未经官方确认的承诺。桌面交互与 CLI 分开描述。
+- P16 Hermes 介绍技能创建与改进、分层跨会话记忆、并行委派、Cron、代码批处理、原生工具与 MCP，以及企业微信网关配置和访问控制；工具数量以当前官方资料为准。
 - Codex 使用官方 OpenAI 文档及当前可用的 OpenAI Docs 技能；其他工具使用各自官方来源。
 - Pi、OpenCode、Kimi 的项目或版本迁移重新核验；DSH 采用官方当前界面，不虚构终端聊天模式；Hermes 的待核验能力查证后再写。
 - 不支持或未确认的能力明确说明，不把另一个工具的功能、命令或权限机制移植过来。
@@ -92,7 +93,7 @@
 
 先读取 AGENTS.md、资料包的大纲、来源、规范和验收清单，并检查现有改动。重新核验涉及安装、认证、平台、配置、权限、快捷键和版本迁移的官方来源。
 
-检查页面是否达到各自验收条件：有完整操作流程、步骤和预期结果；Windows 与 WSL 不混用；PowerShell 7、nvm、uv/Conda、AGENTS.md、CC Switch 与 Herdr 已按学习顺序合并或安排，27 页编号和导航一致，WorkBuddy 排在第九款 Harness；环境和工具功能有依据；代码块适合复制；无凭据与本机私有路径；相对链接、平台标签、四空格缩进正确。
+检查页面是否达到各自验收条件：有完整操作流程、步骤和预期结果；Windows 与 WSL 不混用；PowerShell 7、nvm、uv/Conda、AGENTS.md、CC Switch 与 Herdr 已按学习顺序合并或安排，27 页编号和导航一致，Hermes 排在第九款 Harness；环境和工具功能有依据；代码块适合复制；无凭据与本机私有路径；相对链接、平台标签、四空格缩进正确。
 
 直接修正文档范围内有证据支持的问题，保留用户无关改动。不能证实的功能和命令记录为缺口，不用猜测补齐。比较表和命令速查必须与已核验正文一致。
 

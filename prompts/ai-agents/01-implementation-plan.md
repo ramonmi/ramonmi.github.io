@@ -20,7 +20,7 @@ PowerShell 7 合并进 Windows 环境准备（P03），AGENTS.md 撰写实战合
 
 全栏目按学习依赖连续编号：概念与平台环境 → Node.js/npm 和 Python 环境 → 第一次任务与 Harness → 配套工具（CC Switch 配置切换 → API 协议与 DeepSeek 接入 → Herdr 终端组织，可跳过）→ 日常工作流 → 项目指令 → 扩展 → 选择与迁移 → 自动化与协作 → 参考维护。Herdr 的基础布局不依赖自动化知识，多 Agent 部分先读 P24 再返回实践。选择与迁移页也从栏目首页提供直达入口，方便尚未选工具的读者跳读。
 
-WorkBuddy 作为第九款 Harness 单独介绍桌面工作流；其他桌面应用、IDE 集成、消息平台部署和远程服务不另开页面。与 CLI 学习直接有关时，以可选小节介绍。依赖、主题、CI 配置不因写作任务而升级。
+WorkBuddy 单独介绍桌面工作流，Hermes 作为第九款 Harness 介绍学习闭环和消息网关；其他桌面应用、IDE 集成、消息平台部署和远程服务不另开页面。依赖、主题、CI 配置不因写作任务而升级。
 
 ## 运行时环境的组织
 
@@ -52,9 +52,9 @@ nav = [
       { "Pi" = "ai-agents/harnesses/pi.md" },
       { "oh-my-pi" = "ai-agents/harnesses/oh-my-pi.md" },
       { "DSH" = "ai-agents/harnesses/dsh.md" },
-      { "Hermes Agent" = "ai-agents/harnesses/hermes.md" },
       { "Kimi Code CLI" = "ai-agents/harnesses/kimi-code.md" },
       { "WorkBuddy" = "ai-agents/harnesses/workbuddy.md" },
+      { "Hermes Agent" = "ai-agents/harnesses/hermes.md" },
     ]},
     { "配套工具" = [
       { "CC Switch 安装与配置" = "ai-agents/tools/cc-switch.md" },
@@ -84,7 +84,7 @@ nav = [
 ]
 ```
 
-栏目首页作为章节索引；其余五组直接列出页面，不额外创建分组索引，因此总页数为 27。接入后从站点首页增加一个简短入口，链接 `ai-agents/index.md`。页面编号、大纲排列与导航阅读顺序保持一致；WorkBuddy 排在 Kimi Code 后作为第九款 Harness。
+栏目首页作为章节索引；其余五组直接列出页面，不额外创建分组索引，因此总页数为 27。接入后从站点首页增加一个简短入口，链接 `ai-agents/index.md`。页面编号、大纲排列与导航阅读顺序保持一致；Hermes 排在 WorkBuddy 后作为第九款 Harness。
 
 ## 共用实践项目
 
