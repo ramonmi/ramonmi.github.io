@@ -1,4 +1,15 @@
+---
+date: 2026-06-07
+categories:
+  - Zotero
+---
+
 # 自定义css设置Zotero笔记标签页内容占满幅宽
+
+本文介绍如何通过 Zotero 的 `extensions.zotero.note.css` 首选项，让笔记内容占满可用宽度。
+
+<!-- more -->
+
 ## 隐藏首选项编辑器打开方式
 1. 打开设置Open Settings
 ![20260604_203024](https://cloudflare-imgbed-81c.pages.dev/file/BlogImg/2026/06/20260604_203024.jpg)

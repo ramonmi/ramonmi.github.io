@@ -73,12 +73,7 @@ nav = [
       "ai-agents/reference/maintenance.md",
     ]},
   ]},
-  { "Miscellaneous" = [
-    "miscellaneous/index-miscellaneous.md",
-    { "Zotero笔记标签页css设置" = "miscellaneous/Zotero-noteTab-wideContentView.md" },
-    { "Rime输入统计" = "miscellaneous/Rime-input-count.md" },
-    { "Rime保存英文自造词" = "miscellaneous/Rime-ice-en-words.md" },
-  ]},
+  { "Blog" = "blog/index.md" },
   { "About" = "about-me.md" },
 ]
 
@@ -265,3 +260,13 @@ combine_header_slug = true
 custom_checkbox = true
 [project.markdown_extensions.pymdownx.tilde]
 [project.markdown_extensions.zensical.extensions.glightbox]
+
+[project.plugins.blog]
+
+[project.plugins.redirects]
+
+[project.plugins.redirects.redirect_maps]
+"miscellaneous/index-miscellaneous.md" = "blog/index.md"
+"miscellaneous/Rime-ice-en-words.md" = "blog/posts/Rime-ice-en-words.md"
+"miscellaneous/Rime-input-count.md" = "blog/posts/Rime-input-count.md"
+"miscellaneous/Zotero-noteTab-wideContentView.md" = "blog/posts/Zotero-noteTab-wideContentView.md"

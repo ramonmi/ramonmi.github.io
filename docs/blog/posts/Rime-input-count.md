@@ -1,4 +1,15 @@
+---
+date: 2026-06-07
+categories:
+  - Rime
+---
+
 # Rime 输入统计
+
+本文介绍如何用 Lua 脚本统计 Rime 的上屏字数和按键数，并查看累计与每日数据。
+
+<!-- more -->
+
 ## 使用前须知
 - 使用[新版 librime-lua 引入模块的方式](https://github.com/hchunhui/librime-lua/wiki/Scripting#%E6%96%B0%E7%89%88-librime-lua)，测试版本为[librime.1.16.1](https://github.com/rime/librime)
     - 其他版本可自行测试，如有问题可询问AI或留言。

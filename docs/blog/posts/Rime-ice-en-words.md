@@ -1,4 +1,14 @@
+---
+date: 2026-06-22
+categories:
+  - Rime
+---
+
 # Rime中州韵输入法+Rime-ice雾凇方案保存英文自造词
+
+本文介绍如何在 Rime-ice 雾凇方案中配置 Lua 脚本和词库，保存并再次输入英文自造词。
+
+<!-- more -->
 
 ## Rime中州韵输入法安装及Rime-ice雾凇方案配置
 
