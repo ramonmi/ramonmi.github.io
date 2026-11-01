@@ -36,7 +36,10 @@
 │   ├── index.md                     # 首页
 │   ├── about-me.md                  # 关于页
 │   ├── assets/                      # favicon、logo 等静态资源
-│   └── miscellaneous/               # 杂项笔记
+│   ├── blog/                        # Blog 插件入口与文章
+│   │   ├── index.md                 # Blog 首页
+│   │   └── posts/                   # 博客文章
+│   └── ai-agents/                   # AI Agent 文档
 └── site/                            # 构建产物（忽略）
 ```
 
@@ -45,12 +48,36 @@
 - site 元信息：`site_name`、`site_description`、`site_author`、`site_url`、`copyright`
 - `docs_dir = "docs"`，`site_dir = "site"`，`use_directory_urls = true`
 - `repo_url` / `edit_uri`：指向 GitHub 仓库，支持 "Edit this page"
-- 导航：`nav` 显式定义，一级为 Home / Miscellaneous / About；新增文档需同步更新 `nav`
+- 导航：`nav` 显式定义，一级包括 Home / AI Agents / Blog / About；新增独立文档需同步更新 `nav`
 - 主题：`variant = "modern"`，`language = "zh"`，favicon/logo 为 `assets/favicon.svg`
 - 配色：三套 palette（跟随系统 / light / dark）
 - 功能开关：`navigation.*`、`search.*`、`toc.*`、`content.*` 等大量特性（见 `[project.theme].features`）
 - Markdown 扩展：admonition、attr_list、footnotes、toc、pymdownx 全家桶（highlight、superfences、tabbed、tasklist、emoji 等）、mermaid 自定义 fence、glightbox
 - 社交媒体：`[project.extra.social]`（GitHub、Email）
+
+### Blog 插件
+
+- 插件在 `[project.plugins.blog]` 启用。博客入口是 `docs/blog/index.md`，文章放在 `docs/blog/posts/`。
+- 新文章需在 front matter 中设置 `date`；可用 `categories` 分类，例如：
+  ```yaml
+  ---
+  date: 2026-06-22
+  categories:
+    - Rime
+  ---
+  ```
+- 在首页摘要结束处插入 `<!-- more -->`。Blog 首页会显示分隔符之前的内容和“继续阅读”链接；没有分隔符时会显示全文。
+- `nav` 只添加 `blog/index.md` 入口，不逐篇列出文章。文章列表由插件显示在 Blog 首页正文中。
+
+### Redirects 插件
+
+- 插件在 `[project.plugins.redirects]` 启用，旧路径映射集中写在 `zensical.toml` 末尾的 `[project.plugins.redirects.redirect_maps]` 子表中，每条映射单独一行。
+- 重命名或迁移 Markdown 页面时，若旧页面 URL 已发布，应保留从旧源路径到新源路径的映射，路径相对于 `docs/`，例如：
+  ```toml
+  [project.plugins.redirects.redirect_maps]
+  "miscellaneous/old-page.md" = "blog/posts/new-page.md"
+  ```
+- 新目标使用 `docs/` 内的 Markdown 源路径，不写生成后的 HTML 路径；新增迁移时保持一条映射一行，便于审查和维护。
 
 ## 构建与部署
 
