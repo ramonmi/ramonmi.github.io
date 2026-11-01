@@ -147,4 +147,4 @@ patch:
 - [使用更多rime-melt的lua？ · Issue #101 · iDvel/rime-ice](https://github.com/iDvel/rime-ice/issues/101)
 
 ## See Also
-[ Original Post | LINUX DO :lucide-external-link:](https://linux.do/t/topic/1517565/6){ .md-button }
+[ Original Post | LINUX DO :lucide-external-link:](https://linux.do/t/topic/1517565){ .md-button }
