@@ -65,15 +65,15 @@ uv run python -c "import sys, rich; print(sys.executable); print(rich.__version_
 
 通常优先用 `uv run`。手动激活前先在项目中完成同步：
 
-=== "Git Bash / WSL / macOS / Linux"
+=== "Windows：Git Bash"
     ```bash
-    source .venv/bin/activate
+    source .venv/Scripts/activate
     command -v python
     python -c "import sys; print(sys.executable); print(sys.version)"
     deactivate
     ```
 
-=== "PowerShell 7"
+=== "Windows：PowerShell 7"
     ```powershell
     .\.venv\Scripts\Activate.ps1
     Get-Command python
@@ -81,7 +81,15 @@ uv run python -c "import sys, rich; print(sys.executable); print(rich.__version_
     deactivate
     ```
 
-Windows Git Bash 的脚本路径是 `.venv/Scripts/activate`。检查 `command -v python`；不要在 Windows 与 WSL 之间复用环境目录。
+=== "WSL / macOS / Linux"
+    ```bash
+    source .venv/bin/activate
+    command -v python
+    python -c "import sys; print(sys.executable); print(sys.version)"
+    deactivate
+    ```
+
+按当前终端使用对应的命令确认解释器来自项目 `.venv`；Windows 与 WSL 应分别创建和维护环境，不共用 `.venv`。
 
 ## 用 uv 管理独立 CLI
 
