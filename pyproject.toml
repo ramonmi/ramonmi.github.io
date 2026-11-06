@@ -12,5 +12,5 @@ default = true
 
 [dependency-groups]
 dev = [
-    "zensical>=0.0.71",
+    "zensical>=0.1.0",
 ]
