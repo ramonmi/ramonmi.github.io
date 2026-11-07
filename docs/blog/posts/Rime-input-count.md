@@ -2,6 +2,9 @@
 date: 2026-06-07
 categories:
   - Rime
+tags:
+  - Rime
+  - lua
 ---
 
 # Rime 输入统计

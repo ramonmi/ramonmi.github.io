@@ -2,6 +2,9 @@
 date: 2026-06-07
 categories:
   - Zotero
+tags:
+  - Zotero
+  - css
 ---
 
 # 自定义css设置Zotero笔记标签页内容占满幅宽

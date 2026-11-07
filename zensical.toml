@@ -260,6 +260,19 @@ combine_header_slug = true
 custom_checkbox = true
 [project.markdown_extensions.pymdownx.tilde]
 [project.markdown_extensions.zensical.extensions.glightbox]
+[project.plugins.tags]
+tags_file = "tags.md"
+
+[project.theme.icon.tag]
+default = "lucide/tag"
+html = "fontawesome/brands/html5"
+js = "fontawesome/brands/js"
+css = "fontawesome/brands/css3"
+
+[project.extra.tags]
+HTML5 = "html"
+JavaScript = "js"
+CSS = "css"
 
 [project.plugins.blog]
 

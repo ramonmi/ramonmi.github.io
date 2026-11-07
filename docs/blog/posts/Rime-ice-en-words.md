@@ -2,6 +2,9 @@
 date: 2026-06-22
 categories:
   - Rime
+tags:
+  - Rime
+  - lua
 ---
 
 # Rime中州韵输入法+Rime-ice雾凇方案保存英文自造词
