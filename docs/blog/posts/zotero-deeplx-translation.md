@@ -2,6 +2,8 @@
 title: Zotero DeepLX(API) 翻译服务配置
 description: 在 Zotero 翻译插件中配置 DeepLX(API) 服务。
 date: 2025-07-27
+authors:
+  - ramonmi
 categories:
   - Zotero
 tags:
