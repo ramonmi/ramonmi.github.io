@@ -73,8 +73,10 @@ nav = [
       "ai-agents/reference/maintenance.md",
     ]},
   ]},
-  { "Blog" = "blog/index.md" },
-  { "About" = "about-me.md" },
+  { "Blog" = [
+    { "博客首页" = "blog/index.md" },
+    { "标签索引" = "tags.md" }
+  ]},
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
