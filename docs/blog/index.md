@@ -1,8 +1,11 @@
 ---
 title: Blog
-description: Zotero、Rime 与日常工具的实用技巧和配置笔记。
+description: 常用工具的实用技巧和配置笔记。
 ---
 
 # Blog
 
-这里记录 Zotero、Rime 输入法和其他日常工具的实用技巧与配置。文章列表由 Blog 插件自动生成。
+这里记录 Windows (WSL)、Linux、Agent、Zotero、Rime 等日常工具的实用技巧与配置。
+
+- 按时间浏览最新文章
+- 搜索关键词查询文章
