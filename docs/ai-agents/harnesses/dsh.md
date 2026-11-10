@@ -1,6 +1,6 @@
 ---
 title: DSH（DeepSeek Harness）
-description: 安装并使用 DeepSeek Harness，理解本地 Web UI 与启动 CLI 的区别。
+description: 了解 DSH Desktop，并安装使用 DeepSeek Harness 的 CLI 与本地 Web UI。
 ---
 
 # DSH（DeepSeek Harness）
@@ -10,6 +10,8 @@ description: 安装并使用 DeepSeek Harness，理解本地 Web UI 与启动 CL
 ## 定位与适用场景
 
 DSH 是 DeepSeek Harness 项目。当前仓库说明中的启动 CLI 与本地 Web UI 是不同组成：CLI 可启动应用，不应描述成已确认的 TUI 编码界面。版本和预览状态以官方默认分支为准。
+
+不想使用命令行时，可了解 [DSH Desktop](https://www.dshdesktop.cn/) 桌面客户端。它提供图形化操作入口；客户端的下载、支持平台和版本说明以其官网为准。下文介绍的是上游 DSH 的 npm CLI 与本地 Web UI，两种使用方式可按习惯选择。
 
 ## 安装前检查
 
