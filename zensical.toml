@@ -273,7 +273,7 @@ separator = '[\s\u200b\-\uff0c\u3002\uff1f\uff01]+'
 lang = ["zh", "en"]
 
 [project.plugins.tags]
-tags_file = "tags.md"
+tags_allowed = []
 
 [project.theme.icon.tag]
 default = "lucide/tag"
