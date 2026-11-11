@@ -14,7 +14,8 @@ site_author = "Ramon Mi"
 site_url = "https://ramonmi.github.io/"
 
 copyright = """
-Copyright &copy; 2020-2026, Ramon Mi
+Copyright &copy; 2020-<span id="copyright-year">2026</span>,
+<a href="/about-me/">Ramon Mi</a>
 """
 
 docs_dir = "docs"
@@ -93,6 +94,7 @@ nav = [
 # Read more: https://zensical.org/docs/customization/#additional-css
 #
 extra_css = ["stylesheets/extra.css"]
+extra_javascript = ["javascripts/copyright.js"]
 
 # With the `extra_javascript` option you can add your own JavaScript to your
 # project to customize the behavior according to your needs.
