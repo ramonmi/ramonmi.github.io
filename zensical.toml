@@ -35,7 +35,7 @@ edit_uri = "edit/main/docs"
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
   { "Home" = [
-    { "主页" = "index.md" },
+    "index.md",
   ]},
   { "AI Agents" = [
     "ai-agents/index.md",
@@ -81,7 +81,7 @@ nav = [
     { "标签索引" = "tags.md" }
   ]},
   { "About" = [
-    { "关于" = "about-me.md" },
+    { "About" = "about-me.md" },
   ]}
 ]
 
@@ -116,14 +116,14 @@ language = "zh"
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
 features = [
-    #"announce.dismiss",
+    # "announce.dismiss",
     "navigation.prune",           # 只渲染可见导航项
     "navigation.tracking",        # 滚动时URL锚点自动更新
     "navigation.tabs",            # 一级导航显示为顶部Tab
     "navigation.sections",        # 侧边栏分组
     "navigation.top",             # 返回顶部按钮
     "navigation.footer",          # 上一页/下一页导航
-    #"navigation.instant",        # 即时导航
+    "navigation.instant",         # 即时导航
     "navigation.instant.progress",
     "navigation.instant.prefetch",  # 预加载
     "navigation.path",            # URL路径导航
@@ -133,7 +133,7 @@ features = [
     "search.highlight",           # 搜索结果高亮
     "search.share",               # 搜索结果分享
     "toc.follow",                 # 目录跟随滚动
-    #"toc.integrate",
+    # "toc.integrate",
     "navigation.expand",          # 默认展开导航
     "navigation.indexes",         # 章节索引页
     "content.tabs.link",          # 内容标签页链接
