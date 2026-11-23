@@ -306,3 +306,9 @@ authors_file = "blog/.authors.yml"
 "miscellaneous/Rime-ice-en-words.md" = "blog/posts/Rime-ice-en-words.md"
 "miscellaneous/Rime-input-count.md" = "blog/posts/Rime-input-count.md"
 "miscellaneous/Zotero-noteTab-wideContentView.md" = "blog/posts/Zotero-noteTab-wideContentView.md"
+
+[project.plugins.git-revision-date-localized]
+enabled = true
+type = "timeago"
+timezone = "Asia/Shanghai"
+enable_creation_date = true
